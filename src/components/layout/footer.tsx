@@ -6,8 +6,8 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white py-16">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.5fr_1fr_1fr_1fr] lg:px-8">
+    <footer className="border-t border-slate-200 bg-white py-12 lg:py-16">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-[1.5fr_1fr_1fr_1fr] lg:gap-12 lg:px-8">
         <div className="space-y-4">
           <div className="flex items-center gap-3">
             {/* Logo */}

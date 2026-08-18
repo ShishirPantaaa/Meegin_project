@@ -24,7 +24,7 @@ export default function ContactPage() {
 
       {/* ── Hero / Intro Section ───────────────────────────────────────────── */}
       <section className="mx-auto max-w-7xl px-4 pb-12 pt-8 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-4xl bg-[#004AB8] px-6 py-16 text-center text-white shadow-2xl shadow-slate-900/10 sm:px-12 sm:py-24">
+        <div className="relative overflow-hidden rounded-3xl bg-[#004AB8] px-6 py-12 text-center text-white shadow-2xl shadow-slate-900/10 sm:rounded-4xl sm:px-12 sm:py-24">
           <div
             className="absolute inset-0"
             style={{
@@ -36,7 +36,7 @@ export default function ContactPage() {
             <span className="mb-4 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-100 backdrop-blur-sm">
               Get in Touch
             </span>
-            <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
               Let&apos;s Plan Your Nepal Journey
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-100/90 sm:text-lg">

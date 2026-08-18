@@ -12,8 +12,8 @@ export function DestinationCard({ destination }: DestinationCardProps) {
   const tourCount = destination.numberOfTours ?? destination.tours ?? 0;
 
   return (
-    <div className="group overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-      <Link href={`/destinations/${destination.slug}`} className="block h-64 overflow-hidden rounded-t-4xl">
+    <div className="group overflow-hidden rounded-3xl sm:rounded-4xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+      <Link href={`/destinations/${destination.slug}`} className="block h-56 sm:h-64 overflow-hidden rounded-t-3xl sm:rounded-t-4xl">
         {isValidImageSrc(destination.heroImage) ? (
           <Image
             src={destination.heroImage}
@@ -28,7 +28,7 @@ export function DestinationCard({ destination }: DestinationCardProps) {
           </div>
         )}
       </Link>
-      <div className="space-y-4 p-6">
+      <div className="space-y-4 p-5 sm:p-6">
         <div className="flex items-start justify-between gap-4">
           <div>
             <h3 className="text-xl font-semibold text-slate-900">{destination.name}</h3>
@@ -45,4 +45,3 @@ export function DestinationCard({ destination }: DestinationCardProps) {
     </div>
   );
 }
-

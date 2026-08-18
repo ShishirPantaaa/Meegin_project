@@ -11,7 +11,7 @@ export function TourCard({ tour }: TourCardProps) {
   return (
     <div className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
       <div className="relative">
-        <Image src={tour.image} alt={tour.title} width={600} height={420} className="h-72 w-full object-cover" />
+        <Image src={tour.image} alt={tour.title} width={600} height={420} className="h-56 sm:h-72 w-full object-cover" />
         <button className="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-900 shadow-lg shadow-slate-900/10 transition hover:bg-[#F7FAFC]">
           <Heart className="h-5 w-5" />
         </button>

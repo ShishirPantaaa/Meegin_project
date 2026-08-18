@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 export default function Home() {
   return (
     <main className="bg-[#F7FAFC] text-[#172033]">
-      <section className="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 pb-12 pt-6 sm:pb-16 sm:pt-8 sm:px-6 lg:px-8">
         <Hero />
       </section>
 
@@ -49,7 +49,7 @@ export default function Home() {
             Browse all tours
           </Link>
         </div>
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {tours.map((tour) => (
             <TourCard key={tour.slug} tour={tour} />
           ))}
@@ -107,25 +107,25 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
-          <div className="rounded-4xl border border-slate-200 bg-white p-8 shadow-sm">
+        <div className="grid gap-6 md:gap-10 lg:grid-cols-[1.6fr_1fr]">
+          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:rounded-4xl sm:p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#004AB8]">FAQ preview</p>
-            <div className="mt-8 space-y-6">
+            <div className="mt-6 space-y-5 sm:mt-8 sm:space-y-6">
               {faqs.slice(0, 3).map((faq) => (
                 <div key={faq.question}>
                   <p className="font-semibold text-slate-900">{faq.question}</p>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{faq.answer}</p>
+                  <p className="mt-2 text-sm leading-7 text-slate-600 sm:mt-3">{faq.answer}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="rounded-4xl bg-[#004AB8] p-10 text-white shadow-2xl shadow-slate-900/10">
+          <div className="rounded-3xl bg-[#004AB8] p-7 text-white shadow-2xl shadow-slate-900/10 sm:rounded-4xl sm:p-10">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#A7D4FF]">Custom trip planning</p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">Can’t find the perfect package?</h2>
-            <p className="mt-4 text-base leading-7 text-slate-100/90">
+            <h2 className="mt-4 text-2xl font-semibold leading-tight sm:text-3xl lg:text-4xl">Can&apos;t find the perfect package?</h2>
+            <p className="mt-4 text-sm leading-7 text-slate-100/90 sm:text-base">
               Tell us what kind of Nepal experience you want and our travel team will help design your journey.
             </p>
-            <Button variant="secondary" size="lg" className="mt-8">Plan My Trip</Button>
+            <Button variant="secondary" size="lg" className="mt-6 sm:mt-8">Plan My Trip</Button>
           </div>
         </div>
       </section>

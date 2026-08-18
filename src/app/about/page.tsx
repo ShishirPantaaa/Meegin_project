@@ -464,18 +464,18 @@ export default function AboutPage() {
 
       {/* ── Final CTA ──────────────────────────────────────────────────────── */}
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8" aria-labelledby="cta-heading">
-        <div className="rounded-4xl bg-[#0c4e83] px-8 py-14 text-center text-white shadow-2xl shadow-slate-900/10 sm:px-12">
-          <div className="absolute inset-0 rounded-4xl" style={{ backgroundImage: "radial-gradient(circle at top right, rgba(0,145,218,0.3), transparent 40%)" }} />
+        <div className="relative overflow-hidden rounded-3xl bg-[#0c4e83] px-6 py-12 text-center text-white shadow-2xl shadow-slate-900/10 sm:rounded-4xl sm:px-12 sm:py-14">
+          <div className="absolute inset-0 rounded-3xl sm:rounded-4xl" style={{ backgroundImage: "radial-gradient(circle at top right, rgba(0,145,218,0.3), transparent 40%)" }} />
           <p className="relative text-sm font-semibold uppercase tracking-[0.24em] text-[#A7D4FF]">
             Start Your Nepal Journey
           </p>
-          <h2 id="cta-heading" className="relative mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
+          <h2 id="cta-heading" className="relative mt-4 text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
             Ready to Explore Nepal?
           </h2>
-          <p className="relative mt-6 mx-auto max-w-xl text-base leading-8 text-slate-100/90">
+          <p className="relative mt-5 mx-auto max-w-xl text-sm leading-7 text-slate-100/90 sm:mt-6 sm:text-base sm:leading-8">
             Let us help you plan a comfortable, reliable and memorable journey through Nepal. From cultural heritage to mountain landscapes — your adventure starts here.
           </p>
-          <div className="relative mt-8 flex flex-wrap justify-center gap-4">
+          <div className="relative mt-7 flex flex-wrap justify-center gap-3 sm:mt-8 sm:gap-4">
             <Link href="/destinations">
               <Button variant="secondary" size="lg">
                 Explore Tours

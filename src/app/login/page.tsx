@@ -102,7 +102,7 @@ export default function LoginPage() {
   return (
     <main className="relative flex min-h-[calc(100vh-160px)] w-full items-stretch">
       {/* ──────── LEFT: Visual panel (desktop only) ──────── */}
-      <div className="relative hidden w-[48%] min-w-[420px] overflow-hidden lg:block">
+      <div className="relative hidden w-[48%] overflow-hidden lg:block">
         {/* hero image */}
         <Image
           src={HERO_IMAGE}

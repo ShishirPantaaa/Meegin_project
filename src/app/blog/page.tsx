@@ -36,7 +36,7 @@ export default function BlogPage() {
     <main className="bg-[#F7FAFC] text-[#172033]">
 
       {/* ── Hero Section ──────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-slate-900 pb-20 pt-32 text-center text-white sm:pb-32 sm:pt-40 lg:pb-40">
+      <section className="relative overflow-hidden bg-slate-900 pb-16 pt-20 text-center text-white sm:pb-24 sm:pt-28 lg:pb-36 lg:pt-36">
         {/* Background Image - with fallback styling if missing */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -51,25 +51,25 @@ export default function BlogPage() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-          <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest backdrop-blur-md">
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest backdrop-blur-md">
             <Compass className="h-4 w-4 text-[#0091DA]" /> Travel Journal
           </span>
-          <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-7xl">
+          <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-7xl">
             Explore Nepal, <br className="hidden sm:block" /> One Story at a Time
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-300 sm:mt-6 sm:text-base sm:leading-8 lg:text-lg">
             Discover inspiring places, local experiences, travel tips and practical guides to help you plan your perfect journey across Nepal.
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-10 sm:gap-4">
             <a
               href="#featured"
-              className="inline-flex h-12 items-center justify-center rounded-full bg-[#0091DA] px-8 text-sm font-semibold text-white transition hover:bg-[#004AB8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+              className="inline-flex h-11 items-center justify-center rounded-full bg-[#0091DA] px-6 text-sm font-semibold text-white transition hover:bg-[#004AB8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 sm:h-12 sm:px-8"
             >
               Explore Travel Guides
             </a>
             <Link
               href="/destinations"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-white/30 bg-white/5 px-8 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+              className="inline-flex h-11 items-center justify-center rounded-full border border-white/30 bg-white/5 px-6 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 sm:h-12 sm:px-8"
             >
               Explore Destinations
             </Link>

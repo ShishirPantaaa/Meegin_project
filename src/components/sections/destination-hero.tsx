@@ -8,8 +8,8 @@ interface DestinationHeroProps {
 
 export function DestinationHero({ destination }: DestinationHeroProps) {
   return (
-    <section className="rounded-4xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-      <div className="relative h-105 sm:h-120 lg:h-130">
+    <section className="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden sm:rounded-4xl">
+      <div className="relative h-56 sm:h-80 md:h-105 lg:h-120 xl:h-130">
         {isValidImageSrc(destination.heroImage) ? (
           <Image
             src={destination.heroImage}
@@ -24,13 +24,13 @@ export function DestinationHero({ destination }: DestinationHeroProps) {
           </div>
         )}
       </div>
-      <div className="space-y-4 p-8 sm:p-10">
+      <div className="space-y-3 p-5 sm:space-y-4 sm:p-8 sm:p-10">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#004AB8]">{destination.name}</p>
-        <h1 className="text-4xl font-semibold text-slate-900 sm:text-5xl">Explore {destination.name}</h1>
-        <p className="max-w-3xl text-lg leading-8 text-slate-600">{destination.description}</p>
-        <div className="flex flex-wrap gap-3">
-          <span className="rounded-full bg-[#EAF7FD] px-4 py-2 text-sm font-semibold text-[#004AB8]">{destination.numberOfTours} tours</span>
-          <span className="rounded-full bg-[#ECF8EF] px-4 py-2 text-sm font-semibold text-[#068835]">Featured</span>
+        <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl lg:text-5xl">Explore {destination.name}</h1>
+        <p className="max-w-3xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">{destination.description}</p>
+        <div className="flex flex-wrap gap-2 sm:gap-3">
+          <span className="rounded-full bg-[#EAF7FD] px-3 py-1.5 text-sm font-semibold text-[#004AB8] sm:px-4 sm:py-2">{destination.numberOfTours} tours</span>
+          <span className="rounded-full bg-[#ECF8EF] px-3 py-1.5 text-sm font-semibold text-[#068835] sm:px-4 sm:py-2">Featured</span>
         </div>
       </div>
     </section>

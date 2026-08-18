@@ -16,8 +16,8 @@ export function Gallery({ images }: GalleryProps) {
       </div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {images.map((image) => (
-          <div key={image.src} className="overflow-hidden rounded-4xl bg-slate-100">
-            <Image src={image.src} alt={image.alt} width={540} height={380} className="h-70 w-full object-cover transition duration-500 hover:scale-105" />
+          <div key={image.src} className="overflow-hidden rounded-3xl sm:rounded-4xl bg-slate-100">
+            <Image src={image.src} alt={image.alt} width={540} height={380} className="h-56 sm:h-72 w-full object-cover transition duration-500 hover:scale-105" />
             <div className="border-t border-slate-200 bg-white px-4 py-4 text-sm text-slate-600">{image.category}</div>
           </div>
         ))}

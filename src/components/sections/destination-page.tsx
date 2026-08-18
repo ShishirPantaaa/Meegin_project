@@ -57,8 +57,8 @@ export function DestinationPage({ destination }: DestinationPageProps) {
       {/* ====================================================================== */}
       {/* 2. HERO SECTION - Using custom hero for destination pages */}
       {/* ====================================================================== */}
-      <section className="relative overflow-hidden rounded-4xl">
-        <div className="relative h-96 sm:h-120 lg:h-140">
+      <section className="relative overflow-hidden rounded-3xl sm:rounded-4xl">
+        <div className="relative h-72 sm:h-96 sm:h-120 lg:h-140">
           {isValidImageSrc(destination.heroImage) ? (
             <Image
               src={destination.heroImage}
@@ -75,25 +75,25 @@ export function DestinationPage({ destination }: DestinationPageProps) {
               </span>
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent" />
         </div>
-        <div className="absolute bottom-0 left-0 right-0 space-y-6 px-6 pb-10 pt-20 text-white sm:px-10 sm:pb-12 sm:pt-24">
+        <div className="absolute bottom-0 left-0 right-0 space-y-4 px-5 pb-8 pt-16 text-white sm:space-y-6 sm:px-10 sm:pb-12 sm:pt-24">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#D4E8FF]">Explore Nepal</p>
-            <h1 className="mt-4 text-4xl font-bold sm:text-5xl lg:text-6xl">{destination.name}</h1>
-            <p className="mt-3 max-w-2xl text-lg font-semibold text-slate-100">{destination.tagline}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#D4E8FF] sm:text-sm">Explore Nepal</p>
+            <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl sm:mt-4 lg:text-5xl xl:text-6xl">{destination.name}</h1>
+            <p className="mt-2 max-w-2xl text-sm font-semibold text-slate-100 sm:mt-3 sm:text-base lg:text-lg">{destination.tagline}</p>
           </div>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-3">
             <Link
               href={`/tours?destination=${destination.slug}`}
-              className="inline-flex items-center gap-2 rounded-full bg-[#0091DA] px-6 py-3 font-semibold text-white transition hover:bg-[#004AB8]"
+              className="inline-flex items-center gap-2 rounded-full bg-[#0091DA] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#004AB8] sm:px-6 sm:py-3"
             >
               Explore Tours
               <ChevronRight className="h-4 w-4" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-white bg-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white/20"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-white bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/20 sm:px-6 sm:py-3"
             >
               Plan Your Trip
               <ChevronRight className="h-4 w-4" />
@@ -147,10 +147,10 @@ export function DestinationPage({ destination }: DestinationPageProps) {
       </section>
 
       <section>
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#0091DA]/5 via-white to-[#004AB8]/5 p-8 sm:p-12 border border-blue-100/50 shadow-xl shadow-blue-900/5">
+        <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#0091DA]/5 via-white to-[#004AB8]/5 p-6 sm:rounded-[2.5rem] sm:p-8 sm:p-12 border border-blue-100/50 shadow-xl shadow-blue-900/5">
           <div className="absolute top-0 right-0 -mr-20 -mt-20 h-64 w-64 rounded-full bg-blue-100 blur-3xl opacity-50"></div>
           <div className="absolute bottom-0 left-0 -ml-20 -mb-20 h-64 w-64 rounded-full bg-emerald-100 blur-3xl opacity-50"></div>
-          <div className="relative z-10 grid gap-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
+          <div className="relative z-10 grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
             {[
               { label: "Location", value: destination.location, icon: MapPin, color: "text-blue-600", bg: "bg-blue-100/50" },
               { label: "Known For", value: destination.knownFor, icon: Sparkles, color: "text-amber-600", bg: "bg-amber-100/50" },
@@ -161,11 +161,11 @@ export function DestinationPage({ destination }: DestinationPageProps) {
               const Icon = stat.icon;
               return (
                 <div key={i} className="group flex flex-col items-start transition-all duration-300 hover:-translate-y-1">
-                  <div className={`mb-4 flex h-14 w-14 items-center justify-center rounded-2xl ${stat.bg} ${stat.color} shadow-sm group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className="h-6 w-6 stroke-[2]" />
+                  <div className={`mb-3 flex h-12 w-12 items-center justify-center rounded-xl sm:mb-4 sm:h-14 sm:w-14 sm:rounded-2xl ${stat.bg} ${stat.color} shadow-sm group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className="h-5 w-5 stroke-[2] sm:h-6 sm:w-6" />
                   </div>
                   <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">{stat.label}</p>
-                  <p className="mt-2 text-lg font-semibold text-slate-900 leading-tight">{stat.value}</p>
+                  <p className="mt-1 text-sm font-semibold text-slate-900 leading-tight sm:mt-2 sm:text-base sm:text-lg">{stat.value}</p>
                 </div>
               );
             })}
@@ -379,9 +379,9 @@ export function DestinationPage({ destination }: DestinationPageProps) {
       {/* ====================================================================== */}
       {/* 14. CUSTOM TRIP CTA */}
       {/* ====================================================================== */}
-      <section className="relative overflow-hidden rounded-4xl">
-        <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-          <div className="relative h-96 lg:h-full">
+      <section className="relative overflow-hidden rounded-3xl sm:rounded-4xl">
+        <div className="grid gap-0 lg:grid-cols-2 lg:items-center">
+          <div className="relative h-64 sm:h-80 lg:h-full lg:min-h-[420px]">
             {isValidImageSrc(destination.ctaImage || destination.heroImage) ? (
               <Image
                 src={destination.ctaImage || destination.heroImage}
@@ -396,30 +396,30 @@ export function DestinationPage({ destination }: DestinationPageProps) {
               </div>
             )}
           </div>
-          <div className="space-y-6 p-6 sm:p-10">
+          <div className="space-y-5 bg-white p-6 sm:p-10 sm:space-y-6">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#004AB8]">
                 Custom Experiences
               </p>
-              <h2 className="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">
+              <h2 className="mt-3 text-2xl font-bold text-slate-900 sm:mt-4 sm:text-3xl lg:text-4xl">
                 Create Your Perfect Nepal Journey
               </h2>
-              <p className="mt-4 text-lg leading-8 text-slate-600">
+              <p className="mt-3 text-sm leading-7 text-slate-600 sm:mt-4 sm:text-base sm:leading-8">
                 Have something special in mind? Tell us what you want to experience and our travel team can help
                 create a journey around your interests.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3 sm:gap-4">
               <Link
                 href="/booking"
-                className="inline-flex items-center gap-2 rounded-full bg-[#0091DA] px-6 py-3 font-semibold text-white transition hover:bg-[#004AB8]"
+                className="inline-flex items-center gap-2 rounded-full bg-[#0091DA] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#004AB8] sm:px-6 sm:py-3"
               >
                 Plan My Trip
                 <ChevronRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-[#0091DA] px-6 py-3 font-semibold text-[#0091DA] transition hover:bg-[#EAF7FD]"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-[#0091DA] px-5 py-2.5 text-sm font-semibold text-[#0091DA] transition hover:bg-[#EAF7FD] sm:px-6 sm:py-3"
               >
                 Contact Meegin
                 <ChevronRight className="h-4 w-4" />

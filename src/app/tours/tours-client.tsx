@@ -195,12 +195,12 @@ export function ToursClient({ allTours, featuredTours }: ToursClientProps) {
 
             {/* ── Category Filter Chips ─────────────────────────────────────────── */}
             <section className="mx-auto max-w-7xl px-4 pb-6 sm:px-6 lg:px-8">
-                <div className="flex flex-wrap gap-3">
+                <div className="chips-scroll flex flex-nowrap gap-3 overflow-x-auto pb-2 sm:flex-wrap sm:overflow-visible sm:pb-0">
                     <button
                         onClick={() => setSelectedCategory("All")}
-                        className={`rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0091DA] ${selectedCategory === "All"
-                                ? "bg-[#0091DA] text-white shadow-md shadow-[#0091DA]/20"
-                                : "border border-slate-200 bg-white text-slate-700 hover:bg-slate-50"
+                        className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0091DA] ${selectedCategory === "All"
+                            ? "bg-[#0091DA] text-white shadow-md shadow-[#0091DA]/20"
+                            : "border border-slate-200 bg-white text-slate-700 hover:bg-slate-50"
                             }`}
                     >
                         All Tours
@@ -211,9 +211,9 @@ export function ToursClient({ allTours, featuredTours }: ToursClientProps) {
                             <button
                                 key={cat}
                                 onClick={() => setSelectedCategory(cat === selectedCategory ? "All" : cat)}
-                                className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0091DA] ${selectedCategory === cat
-                                        ? "bg-[#0091DA] text-white shadow-md shadow-[#0091DA]/20"
-                                        : "border border-slate-200 bg-white text-slate-700 hover:bg-slate-50"
+                                className={`shrink-0 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0091DA] ${selectedCategory === cat
+                                    ? "bg-[#0091DA] text-white shadow-md shadow-[#0091DA]/20"
+                                    : "border border-slate-200 bg-white text-slate-700 hover:bg-slate-50"
                                     }`}
                             >
                                 <Icon className="h-4 w-4" aria-hidden="true" />
