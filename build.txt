@@ -1,0 +1,64 @@
+
+> temp-meegin@0.1.0 build
+> next build
+
+▲ Next.js 16.3.0 (Turbopack)
+✓ Running next.config.ts took 26ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1133ms
+  Running TypeScript ...
+  Finished TypeScript in 1499ms ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/133) ...
+  Generating static pages using 15 workers (33/133) 
+  Generating static pages using 15 workers (66/133) 
+  Generating static pages using 15 workers (99/133) 
+✓ Generating static pages using 15 workers (133/133) in 1067ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /account
+├ ○ /account/bookings
+├ ○ /account/profile
+├ ○ /blog
+├ ƒ /booking/[tourId]
+├ ○ /checkout
+├ ○ /contact
+├ ○ /destinations
+├   /destinations/[slug]
+│ ├ ○ /destinations/pokhara
+│ ├ ○ /destinations/mustang
+│ ├ ○ /destinations/chitwan
+│ └ ● [+8 more paths]
+├   /destinations/[slug]/places/[placeSlug]
+│ ├ ● /destinations/pokhara/places/phewa-lake
+│ ├ ● /destinations/pokhara/places/sarangkot
+│ ├ ● /destinations/pokhara/places/world-peace-pagoda
+│ └ ● [+100 more paths]
+├ ○ /destinations/annapurna
+├ ○ /destinations/baglung
+├ ○ /destinations/bandipur
+├ ○ /destinations/bhaktapur
+├ ○ /destinations/chitwan
+├ ○ /destinations/evrest
+├ ○ /destinations/kathmandu
+├ ○ /destinations/lumbini
+├ ○ /destinations/mustabg
+├ ○ /destinations/mustang
+├ ○ /destinations/palpa
+├ ○ /destinations/pokhara
+├ ○ /faq
+├ ○ /gallery
+├ ○ /login
+├ ○ /register
+└ ○ /tours
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

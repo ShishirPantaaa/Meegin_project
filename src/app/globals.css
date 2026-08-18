@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7fafc;
+  --foreground: #172033;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --ring: #cbd5e1;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+@layer components {
+  .hero-radial-overlay {
+    background-image: radial-gradient(circle at top left, rgba(0, 145, 218, 0.25), transparent 35%), radial-gradient(circle at bottom right, rgba(33, 151, 54, 0.18), transparent 30%);
+  }
+
+  .hero-image-top-glow {
+    background-image: radial-gradient(circle at top, rgba(255, 255, 255, 0.14), transparent 55%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #0091da;
+  color: white;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }

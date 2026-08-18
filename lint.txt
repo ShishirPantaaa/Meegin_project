@@ -1,0 +1,28 @@
+
+> temp-meegin@0.1.0 lint
+> eslint
+
+
+G:\meegin tours and travels\src\app\destinations\bhaktapur\page.tsx
+    4:76  warning  'SunMedium' is defined but never used                            @typescript-eslint/no-unused-vars
+  149:40  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  336:57  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+G:\meegin tours and travels\src\app\destinations\chitwan\page.tsx
+  16:3  warning  'Waves' is defined but never used  @typescript-eslint/no-unused-vars
+
+G:\meegin tours and travels\src\app\destinations\evrest\page.tsx
+    4:76  warning  'SunMedium' is defined but never used                            @typescript-eslint/no-unused-vars
+  121:44  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  121:91  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  146:24  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  336:57  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+G:\meegin tours and travels\src\app\destinations\mustabg\page.tsx
+  4:76  warning  'SunMedium' is defined but never used  @typescript-eslint/no-unused-vars
+
+G:\meegin tours and travels\src\app\destinations\mustang\page.tsx
+  15:3  warning  'Waves' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 11 problems (6 errors, 5 warnings)
+

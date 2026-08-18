@@ -1,0 +1,825 @@
+import type { Destination, Place, Experience, FaqItem, TravelTip, GalleryImage, Highlight } from "@/types";
+
+const chitwanPlaces: Place[] = [
+  {
+    id: "chitwan-national-park-place",
+    slug: "chitwan-national-park",
+    name: "Chitwan National Park",
+    category: "Wildlife & Nature",
+    shortDescription:
+      "Explore Nepal's famous wildlife sanctuary through jungle safaris, nature walks and unforgettable encounters with wildlife.",
+    description:
+      "Chitwan National Park is Nepal's most exciting wildlife destination, known for its diverse ecosystem, rare species and world-class safari experiences. The park is home to the endangered one-horned rhinoceros, Bengal tigers, wild elephants, crocodiles and over 450 bird species. A visit to Chitwan National Park offers multiple safari experiences—elephant-back safaris, walking tours and jeep tours—each providing unique perspectives on the jungle landscape and wildlife. The park's dense forests, meandering rivers and open grasslands create varied habitats where wildlife sightings may include rhinos at water holes, birds in flight and monkeys in the canopy. Conservation efforts have made the park a success story, and visiting supports ongoing protection work. Whether you're an avid birdwatcher or eager to explore jungle ecology, Chitwan National Park delivers an authentic and memorable wildlife adventure.",
+    image: "/images/destinations/chitwan/chitwan.jpg",
+    location: "Chitwan",
+    duration: "1–2 Days",
+    bestTime: "October–March",
+    featured: true,
+    tourAvailable: true,
+    tourSlug: "chitwan-wildlife-safari",
+    highlights: [
+      "Jungle safari",
+      "Wildlife observation",
+      "One-horned rhinoceros",
+      "Bird watching",
+      "Nature walks",
+      "Forest landscapes",
+    ],
+    travelTips: [
+      {
+        id: "cnp-tip-1",
+        title: "Follow park and guide instructions",
+        description: "Your guide knows the terrain and wildlife behavior best.",
+        category: "Safety",
+      },
+      {
+        id: "cnp-tip-2",
+        title: "Do not approach wildlife",
+        description: "Maintain safe distances for your safety and wildlife wellbeing.",
+        category: "Safety",
+      },
+      {
+        id: "cnp-tip-3",
+        title: "Carry binoculars if available",
+        description: "Binoculars help you spot distant wildlife and birds.",
+        category: "Equipment",
+      },
+      {
+        id: "cnp-tip-4",
+        title: "Wear comfortable outdoor clothing",
+        description: "Neutral colors blend better with the environment.",
+        category: "Clothing",
+      },
+      {
+        id: "cnp-tip-5",
+        title: "Respect conservation rules",
+        description: "The park's protection ensures wildlife thrives for future visits.",
+        category: "Responsibility",
+      },
+      {
+        id: "cnp-tip-6",
+        title: "Avoid littering",
+        description: "Keep the park pristine to protect ecosystems and animal habitats.",
+        category: "Responsibility",
+      },
+    ],
+    gallery: [
+      {
+        id: "cnp-g1",
+        src: "/images/destinations/chitwan/chitwan-national-park-1.jpg",
+        alt: "Jungle safari in Chitwan National Park",
+        category: "Wildlife",
+      },
+      {
+        id: "cnp-g2",
+        src: "/images/destinations/chitwan/chitwan-national-park-2.jpg",
+        alt: "One-horned rhinoceros in Chitwan",
+        category: "Wildlife",
+      },
+      {
+        id: "cnp-g3",
+        src: "/images/destinations/chitwan/chitwan-national-park-3.jpg",
+        alt: "Forest landscape in Chitwan National Park",
+        category: "Nature",
+      },
+    ],
+  },
+  {
+    id: "sauraha-place",
+    slug: "sauraha",
+    name: "Sauraha",
+    category: "Wildlife & Adventure",
+    shortDescription:
+      "A lively riverside gateway to Chitwan National Park filled with jungle adventures, local culture and beautiful sunsets.",
+    description:
+      "Sauraha is the primary base for exploring Chitwan National Park, positioned on the banks of the Rapti River with easy access to safari activities and local accommodations. The settlement has evolved into a vibrant hub where travelers gather before and after their wildlife adventures, with numerous lodges, restaurants and activity operators creating a welcoming atmosphere. From Sauraha, you can arrange jungle safaris, canoe rides, village walks and evening cultural programs that showcase Tharu traditions. The riverside setting makes Sauraha particularly atmospheric at sunset, when light reflects off the water and sounds of the evening jungle fill the air. Beyond adventure, Sauraha offers a chance to experience authentic local culture, interact with communities and enjoy meals that blend Tharu and international flavors. Whether you're preparing for a full safari experience or simply seeking a peaceful riverside escape with wildlife nearby, Sauraha serves as the perfect base.",
+    image: "/images/destinations/chitwan/sauraha.jpg",
+    location: "Sauraha, Chitwan",
+    duration: "1–2 Days",
+    bestTime: "October–March",
+    featured: true,
+    tourAvailable: true,
+    tourSlug: "chitwan-wildlife-safari",
+    highlights: [
+      "Jungle safari",
+      "Rapti River",
+      "Sunset views",
+      "Tharu culture",
+      "Local experiences",
+    ],
+    travelTips: [
+      {
+        id: "sauraha-tip-1",
+        title: "Book safari activities with trusted operators",
+        description: "Established operators provide better guides and safety protocols.",
+        category: "Planning",
+      },
+      {
+        id: "sauraha-tip-2",
+        title: "Carry comfortable walking shoes",
+        description: "You'll be walking through villages and along riverside paths.",
+        category: "Equipment",
+      },
+      {
+        id: "sauraha-tip-3",
+        title: "Carry insect protection",
+        description: "Mosquitoes and insects are common in riverside areas.",
+        category: "Health",
+      },
+      {
+        id: "sauraha-tip-4",
+        title: "Keep the riverside clean",
+        description: "Help preserve this beautiful ecosystem for future visitors.",
+        category: "Responsibility",
+      },
+      {
+        id: "sauraha-tip-5",
+        title: "Respect local communities",
+        description: "Sauraha is a living village, not just a tourist destination.",
+        category: "Culture",
+      },
+    ],
+    gallery: [
+      {
+        id: "sauraha-g1",
+        src: "/images/destinations/chitwan/sauraha-1.jpg",
+        alt: "Sauraha riverside village in Chitwan",
+        category: "Gateway",
+      },
+      {
+        id: "sauraha-g2",
+        src: "/images/destinations/chitwan/sauraha-2.jpg",
+        alt: "Rapti River sunset in Sauraha",
+        category: "Landscape",
+      },
+    ],
+  },
+  {
+    id: "tharu-cultural-museum-place",
+    slug: "tharu-cultural-museum",
+    name: "Tharu Cultural Museum",
+    category: "Culture & Heritage",
+    shortDescription:
+      "Discover the traditions, lifestyle, art and cultural heritage of the Tharu people.",
+    description:
+      "The Tharu Cultural Museum offers a comprehensive look at the life, traditions and heritage of the Tharu people, who are native to the Chitwan region. The museum displays traditional clothing, handmade tools, agricultural implements, ceremonial objects and household items that reflect Tharu daily life and craftsmanship. Exhibits showcase traditional architecture, weaving techniques, musical instruments and spiritual practices that have been passed down through generations. Walking through the museum helps visitors understand Tharu culture's depth and resilience—their adaptation to the Terai landscape, their unique traditions, and their ongoing presence in the region. By visiting the museum, you support local cultural preservation and gain meaningful appreciation for the communities that make Chitwan special. The experience enriches any Chitwan trip by connecting you with the human stories and cultural identity behind the region's natural beauty.",
+    image: "/images/destinations/chitwan/tharu-cultural-museum.jpg",
+    location: "Sauraha, Chitwan",
+    duration: "1–2 Hours",
+    bestTime: "Year-round",
+    featured: true,
+    tourAvailable: true,
+    tourSlug: "chitwan-wildlife-safari",
+    highlights: [
+      "Tharu heritage",
+      "Traditional artifacts",
+      "Cultural displays",
+      "Local history",
+      "Traditional lifestyle",
+    ],
+    travelTips: [
+      {
+        id: "tcm-tip-1",
+        title: "Respect museum rules",
+        description: "Follow guidance to protect exhibits and other visitors' experience.",
+        category: "Courtesy",
+      },
+      {
+        id: "tcm-tip-2",
+        title: "Ask before taking photographs",
+        description: "Some exhibits may have photography restrictions.",
+        category: "Photography",
+      },
+      {
+        id: "tcm-tip-3",
+        title: "Take time to read cultural information",
+        description: "Museum descriptions add depth to your understanding.",
+        category: "Learning",
+      },
+      {
+        id: "tcm-tip-4",
+        title: "Support local cultural initiatives",
+        description: "Your visit contributes to cultural preservation efforts.",
+        category: "Responsibility",
+      },
+    ],
+    gallery: [
+      {
+        id: "tcm-g1",
+        src: "/images/destinations/chitwan/tharu-cultural-museum-1.jpg",
+        alt: "Tharu Cultural Museum exhibits",
+        category: "Culture",
+      },
+      {
+        id: "tcm-g2",
+        src: "/images/destinations/chitwan/tharu-cultural-museum-2.jpg",
+        alt: "Traditional Tharu artifacts and heritage",
+        category: "Heritage",
+      },
+    ],
+  },
+  {
+    id: "bishazari-tal-place",
+    slug: "bishazari-tal",
+    name: "Bishazari Tal (20,000 Lakes)",
+    category: "Wetland & Nature",
+    shortDescription:
+      "Explore a peaceful wetland ecosystem filled with birds, water landscapes and rich biodiversity.",
+    description:
+      "Bishazari Tal is a scenic wetland area known for its network of small lakes and waterways that create a unique ecosystem within Chitwan. The area's name references the many water bodies that dot the landscape, making it a paradise for birdwatchers and nature photographers. The wetland supports diverse birdlife throughout the year, with different species present depending on the season. The peaceful environment, water reflections and surrounding forests make Bishazari Tal an ideal escape for those seeking quiet nature experiences away from the busier safari routes. The lakes and waterways also provide habitat for fish, water plants and aquatic animals, creating a rich biological environment. Visiting Bishazari Tal offers a different perspective on Chitwan's biodiversity compared to dense jungle safaris—here the landscape is more open, the atmosphere more serene, and the focus shifts to wetland ecosystems and bird observation.",
+    image: "/images/destinations/chitwan/bishazari-tal.jpg",
+    location: "Chitwan",
+    duration: "Half Day",
+    bestTime: "October–March",
+    featured: true,
+    tourAvailable: true,
+    tourSlug: "chitwan-wildlife-safari",
+    highlights: [
+      "Wetland landscapes",
+      "Bird watching",
+      "Nature photography",
+      "Biodiversity",
+      "Peaceful environment",
+    ],
+    travelTips: [
+      {
+        id: "bt-tip-1",
+        title: "Carry binoculars",
+        description: "Essential for observing birds and distant wildlife.",
+        category: "Equipment",
+      },
+      {
+        id: "bt-tip-2",
+        title: "Avoid disturbing birds",
+        description: "Keep movements and sounds minimal for best sightings.",
+        category: "Wildlife care",
+      },
+      {
+        id: "bt-tip-3",
+        title: "Keep noise low",
+        description: "Quiet observers are rewarded with more wildlife activity.",
+        category: "Courtesy",
+      },
+      {
+        id: "bt-tip-4",
+        title: "Do not litter",
+        description: "Plastic and trash harm waterbirds and aquatic life.",
+        category: "Responsibility",
+      },
+      {
+        id: "bt-tip-5",
+        title: "Visit with a local guide when appropriate",
+        description: "Guides know the best spots and bird behavior patterns.",
+        category: "Planning",
+      },
+    ],
+    gallery: [
+      {
+        id: "bt-g1",
+        src: "/images/destinations/chitwan/bishazari-tal-1.jpg",
+        alt: "Bishazari Tal wetland and lakes",
+        category: "Nature",
+      },
+      {
+        id: "bt-g2",
+        src: "/images/destinations/chitwan/bishazari-tal-2.jpg",
+        alt: "Birdlife in Bishazari Tal wetland",
+        category: "Wildlife",
+      },
+    ],
+  },
+  {
+    id: "devghat-dham-place",
+    slug: "devghat-dham",
+    name: "Devghat Dham",
+    category: "Spiritual & Culture",
+    shortDescription:
+      "A peaceful spiritual destination where rivers, temples and cultural traditions come together.",
+    description:
+      "Devghat Dham is a sacred location where multiple rivers converge, creating a spiritually significant site for pilgrims and visitors seeking a peaceful connection to religious traditions. The area is dotted with temples, shrines and meditation spaces that reflect Hindu and Buddhist spiritual heritage. The confluence of rivers creates a powerful natural setting that has made Devghat a pilgrimage destination for generations. Visitors can experience the spiritual atmosphere, observe daily rituals and traditions, and enjoy quiet moments beside the flowing waters. The site's peaceful character, combined with its religious significance, makes it a contemplative counterpoint to Chitwan's more action-oriented activities. Whether you practice a specific faith or simply appreciate sacred landscapes, Devghat Dham offers a serene and culturally meaningful experience that deepens your understanding of Nepal's spiritual traditions.",
+    image: "/images/destinations/chitwan/devghat-dham.jpg",
+    location: "Devghat, Chitwan",
+    duration: "Half Day – 1 Day",
+    bestTime: "October–March",
+    featured: true,
+    tourAvailable: true,
+    tourSlug: "chitwan-wildlife-safari",
+    highlights: [
+      "Religious sites",
+      "River confluence",
+      "Spiritual atmosphere",
+      "Traditional culture",
+      "Peaceful surroundings",
+    ],
+    travelTips: [
+      {
+        id: "dd-tip-1",
+        title: "Dress respectfully",
+        description: "Modest, conservative clothing is appreciated at sacred sites.",
+        category: "Culture",
+      },
+      {
+        id: "dd-tip-2",
+        title: "Respect religious practices",
+        description: "Observe quietly and follow local customs.",
+        category: "Culture",
+      },
+      {
+        id: "dd-tip-3",
+        title: "Follow local temple rules",
+        description: "Each site may have specific protocols for visitors.",
+        category: "Courtesy",
+      },
+      {
+        id: "dd-tip-4",
+        title: "Avoid disturbing worshippers",
+        description: "Be respectful of people engaged in religious activities.",
+        category: "Courtesy",
+      },
+    ],
+    gallery: [
+      {
+        id: "dd-g1",
+        src: "/images/destinations/chitwan/devghat-dham-1.jpg",
+        alt: "Devghat Dham spiritual site and temples",
+        category: "Spiritual",
+      },
+      {
+        id: "dd-g2",
+        src: "/images/destinations/chitwan/devghat-dham-2.jpg",
+        alt: "River confluence at Devghat Dham",
+        category: "Nature",
+      },
+    ],
+  },
+  {
+    id: "rapti-river-place",
+    slug: "rapti-river",
+    name: "Rapti River",
+    category: "Nature & Adventure",
+    shortDescription:
+      "Enjoy peaceful riverside moments, canoeing experiences and beautiful sunsets along the Rapti River.",
+    description:
+      "The Rapti River is central to Chitwan's character and offers multiple ways to experience its beauty and ecological importance. Canoeing or boating on the Rapti provides a unique vantage point for observing riverside wildlife, including crocodiles basking on banks, water birds in flight and monkeys in riverine vegetation. The river's gentle current makes it accessible for all skill levels, and paddling through quiet sections of the river creates a meditative connection with nature. Sunrise and sunset trips are particularly magical, with light reflecting off the water and creating photographic opportunities. The river is also home to diverse fish species and supports the livelihoods of local communities. From Sauraha, the Rapti is easily accessible, and most lodges can arrange guided canoe or boat trips. Whether you're seeking wildlife observation, photography, a meditative experience or simply a unique way to explore the landscape, the Rapti River delivers memorable moments.",
+    image: "/images/destinations/chitwan/rapti-river.jpg",
+    location: "Sauraha, Chitwan",
+    duration: "2–4 Hours",
+    bestTime: "October–March",
+    featured: true,
+    tourAvailable: true,
+    tourSlug: "chitwan-wildlife-safari",
+    highlights: [
+      "Canoeing",
+      "Sunset views",
+      "Riverside scenery",
+      "Photography",
+      "Nature experience",
+    ],
+    travelTips: [
+      {
+        id: "rr-tip-1",
+        title: "Follow safety instructions",
+        description: "Guides will provide safety briefings; follow them carefully.",
+        category: "Safety",
+      },
+      {
+        id: "rr-tip-2",
+        title: "Wear suitable clothing",
+        description: "Lightweight, water-friendly clothes and secure footwear are best.",
+        category: "Clothing",
+      },
+      {
+        id: "rr-tip-3",
+        title: "Do not enter restricted areas",
+        description: "Some river sections are off-limits for visitor safety.",
+        category: "Safety",
+      },
+      {
+        id: "rr-tip-4",
+        title: "Keep the river clean",
+        description: "Never litter; help protect this vital ecosystem.",
+        category: "Responsibility",
+      },
+    ],
+    gallery: [
+      {
+        id: "rr-g1",
+        src: "/images/destinations/chitwan/rapti-river-1.jpg",
+        alt: "Canoeing on the Rapti River",
+        category: "Adventure",
+      },
+      {
+        id: "rr-g2",
+        src: "/images/destinations/chitwan/rapti-river-2.jpg",
+        alt: "Rapti River sunset in Chitwan",
+        category: "Landscape",
+      },
+    ],
+  },
+  {
+    id: "elephant-breeding-centre-place",
+    slug: "elephant-breeding-centre",
+    name: "Elephant Breeding Centre",
+    category: "Wildlife & Conservation",
+    shortDescription:
+      "Learn about elephant conservation and experience an educational wildlife visit.",
+    description:
+      "The Elephant Breeding Centre is a conservation facility dedicated to the care and breeding of Asian elephants, offering visitors an educational experience centered on wildlife preservation. The centre provides insight into how elephants are managed, trained and cared for in a structured environment. Visitors can observe daily routines, learn about elephant behavior and intelligence, and understand the challenges facing Asian elephants in the wild. The centre's staff is knowledgeable about conservation efforts and can explain the importance of protected breeding programs. The experience emphasizes responsible wildlife interaction and helps visitors understand that supporting conservation centers contributes to species survival. Photography is often permitted, and the opportunity to observe these magnificent animals up close creates lasting memories. By visiting the centre, you help fund ongoing conservation and education initiatives that benefit wild elephant populations.",
+    image: "/images/destinations/chitwan/elephant-breeding-centre.jpg",
+    location: "Chitwan",
+    duration: "1–2 Hours",
+    bestTime: "October–March",
+    featured: true,
+    tourAvailable: true,
+    tourSlug: "chitwan-wildlife-safari",
+    highlights: [
+      "Elephant conservation",
+      "Educational experience",
+      "Wildlife awareness",
+      "Photography where permitted",
+      "Conservation learning",
+    ],
+    travelTips: [
+      {
+        id: "ebc-tip-1",
+        title: "Follow centre rules",
+        description: "Regulations exist for visitor and animal safety.",
+        category: "Safety",
+      },
+      {
+        id: "ebc-tip-2",
+        title: "Maintain a respectful distance",
+        description: "Give animals space and observe from safe areas.",
+        category: "Safety",
+      },
+      {
+        id: "ebc-tip-3",
+        title: "Do not feed animals unless officially permitted",
+        description: "Unauthorized feeding can harm animals.",
+        category: "Wildlife care",
+      },
+      {
+        id: "ebc-tip-4",
+        title: "Follow photography restrictions",
+        description: "Some areas or times may prohibit photography.",
+        category: "Rules",
+      },
+    ],
+    gallery: [
+      {
+        id: "ebc-g1",
+        src: "/images/destinations/chitwan/elephant-breeding-centre-1.jpg",
+        alt: "Elephants at the Breeding Centre",
+        category: "Wildlife",
+      },
+      {
+        id: "ebc-g2",
+        src: "/images/destinations/chitwan/elephant-breeding-centre-2.jpg",
+        alt: "Conservation facility and elephants",
+        category: "Conservation",
+      },
+    ],
+  },
+  {
+    id: "kasara-place",
+    slug: "kasara",
+    name: "Kasara",
+    category: "Nature & Heritage",
+    shortDescription:
+      "A peaceful area within the Chitwan region surrounded by forest, wildlife and natural landscapes.",
+    description:
+      "Kasara is a quieter, less-visited area within Chitwan that offers a more immersive experience of the park's natural environment. The setting is surrounded by dense forest where wildlife may be observed in their natural habitat. The peaceful atmosphere, combined with fewer tourists, creates opportunities for deeper nature observation and photography. Kasara is an ideal destination for travelers seeking solitude and authentic jungle experiences away from more developed tourist zones. The area's forests support diverse birdlife, and patient observers may spot various species throughout the day. The nearby Rapti River provides additional opportunities for water-based wildlife observation and quiet reflection. Whether you're interested in advanced wildlife photography, extended nature hikes or simply experiencing the genuine sounds and sights of the jungle, Kasara delivers an authentic and less-crowded alternative to busier Chitwan areas.",
+    image: "/images/destinations/chitwan/kasara.jpg",
+    location: "Kasara, Chitwan",
+    duration: "Half Day – 1 Day",
+    bestTime: "October–March",
+    featured: true,
+    tourAvailable: true,
+    tourSlug: "chitwan-wildlife-safari",
+    highlights: [
+      "Forest landscapes",
+      "Wildlife surroundings",
+      "Nature experience",
+      "Photography",
+      "Peaceful environment",
+    ],
+    travelTips: [
+      {
+        id: "kasara-tip-1",
+        title: "Follow park rules",
+        description: "Stay on designated paths and follow all park regulations.",
+        category: "Safety",
+      },
+      {
+        id: "kasara-tip-2",
+        title: "Stay with authorized guides where required",
+        description: "Guides ensure your safety and maximize wildlife sightings.",
+        category: "Safety",
+      },
+      {
+        id: "kasara-tip-3",
+        title: "Avoid disturbing wildlife",
+        description: "Quiet observation is key to wildlife photography and safety.",
+        category: "Wildlife care",
+      },
+      {
+        id: "kasara-tip-4",
+        title: "Carry water and sun protection",
+        description: "Jungle exposure requires hydration and UV protection.",
+        category: "Health",
+      },
+    ],
+    gallery: [
+      {
+        id: "kasara-g1",
+        src: "/images/destinations/chitwan/kasara-1.jpg",
+        alt: "Kasara forest landscape in Chitwan",
+        category: "Nature",
+      },
+      {
+        id: "kasara-g2",
+        src: "/images/destinations/chitwan/kasara-2.jpg",
+        alt: "Wildlife habitat in Kasara",
+        category: "Wildlife",
+      },
+    ],
+  },
+  {
+    id: "jeep-safari",
+    slug: "jeep-safari",
+    name: "Jeep Safari",
+    category: "Adventure",
+    shortDescription: "Explore the jungle in motion.",
+    description:
+      "A jeep safari takes travelers into the heart of Chitwan's diverse landscape, providing a comfortable way to cover more ground while observing wildlife, birdlife and open grasslands. This is one of the best ways to experience the park's rhythms, especially at sunrise or late afternoon when animals are often more active. Along the route, guides help point out tracks, hidden habitats and emerging wildlife while explaining the park's ecology. For visitors who want an energetic yet accessible wildlife experience, a jeep safari offers a perfect blend of excitement and scenery.",
+    image: "/images/destinations/chitwan/jeep-safari.jpg",
+    location: "Chitwan National Park",
+    duration: "2–4 hours",
+    bestTime: "October–March",
+    featured: true,
+    tourAvailable: false,
+    highlights: ["Wildlife tracking", "Open grasslands", "Sunrise safari", "Expert guides"],
+  },
+  {
+    id: "rapti-river-canoeing",
+    slug: "rapti-river-canoeing",
+    name: "Rapti River Canoeing",
+    category: "Nature & Adventure",
+    shortDescription: "A peaceful river adventure.",
+    description:
+      "Glide along the Rapti River in a canoe and experience Chitwan from a completely different perspective. The riverbanks are vibrant with bird activity, crocodile sightings and a steady flow of life from the surrounding forest. Canoeing offers a calm, scenic journey where travelers can slow down and take in the natural beauty of the region without the rush of a safari drive. It is especially appealing for photographers and nature lovers who enjoy observing movement, light and the sounds of the jungle from the water.",
+    image: "/images/destinations/chitwan/canoeing.jpg",
+    location: "Rapti River",
+    duration: "1–2 hours",
+    bestTime: "October–March",
+    featured: true,
+    tourAvailable: false,
+    highlights: ["River wildlife", "Crocodile sightings", "Bird watching", "Scenic paddling"],
+  },
+  {
+    id: "tharu-village",
+    slug: "tharu-village",
+    name: "Tharu Village",
+    category: "Culture",
+    shortDescription: "A glimpse into local culture and community life.",
+    description:
+      "A visit to a Tharu village reveals one of the most engaging cultural sides of Chitwan. The Tharu community has a long and distinctive connection to the region's forests, agriculture and traditions, and village visits offer insight into local food, crafts, daily routines and heritage. Travelers often enjoy community interaction, cultural storytelling and the chance to see how life unfolds in a setting shaped by both nature and tradition. The experience adds a human, local dimension to a safari trip and helps visitors connect more deeply with the region beyond its wildlife.",
+    image: "/images/destinations/chitwan/tharu-village.jpg",
+    location: "Village Belt of Chitwan",
+    duration: "2–3 hours",
+    bestTime: "Year-round",
+    featured: true,
+    tourAvailable: false,
+    highlights: ["Tharu traditions", "Local crafts", "Community interaction", "Cultural storytelling"],
+  },
+  {
+    id: "bishazari-lake",
+    slug: "bishazari-lake",
+    name: "Bishazari Lake",
+    category: "Nature",
+    shortDescription: "A bird-rich wetland experience.",
+    description:
+      "Bishazari Lake is a tranquil wetland setting known for birdlife and a peaceful atmosphere that contrasts beautifully with the busier safari zones. It is ideal for calm observation, nature walks and photography, especially for travelers interested in water birds and wetland habitats. The surrounding landscape combines still water, lush greenery and open skies, creating a restful place to appreciate Chitwan's ecological variety. For visitors seeking a quieter moment outdoors, this destination offers a gentle and rewarding experience.",
+    image: "/images/destinations/chitwan/bishazari-lake.jpg",
+    location: "Chitwan Lowlands",
+    duration: "1–2 hours",
+    bestTime: "October–March",
+    featured: true,
+    tourAvailable: false,
+    highlights: ["Wetland birdlife", "Nature photography", "Peaceful walks", "Aquatic habitats"],
+  },
+  {
+    id: "devghat",
+    slug: "devghat",
+    name: "Devghat",
+    category: "Spiritual & Culture",
+    shortDescription: "A spiritual stop in the jungle foothills.",
+    description:
+      "Devghat is a culturally significant place with spiritual importance and a peaceful atmosphere, set among the broader landscape of the southern plains. It offers a different side of Chitwan, where nature, faith and local heritage meet in a serene environment. Visitors often come here to observe the calmer rhythm of the region or to enjoy a reflective break between more active jungle activities. It enriches a Chitwan itinerary by adding a slower, more contemplative chapter to the journey.",
+    image: "/images/destinations/chitwan/devghat.jpg",
+    location: "Near Chitwan",
+    duration: "1–2 hours",
+    bestTime: "Year-round",
+    featured: true,
+    tourAvailable: false,
+    highlights: ["River confluence", "Sacred temples", "Peaceful atmosphere", "Cultural heritage"],
+  },
+  {
+    id: "jungle-walk-bird-watching",
+    slug: "jungle-walk-bird-watching",
+    name: "Jungle Walk & Bird Watching",
+    category: "Wildlife",
+    shortDescription: "Slow, attentive exploration of the wild.",
+    description:
+      "Jungle walks and bird watching bring travelers close to the details of Chitwan's rich natural world. This form of exploration invites attention to small movements, bird calls, forest textures and the subtle signals that reveal local wildlife activity. It is a perfect complement to safari drives, allowing travelers to slow down and notice the layered beauty of the ecosystem. For nature lovers, photographers and first-time visitors, these quiet activities can become the most memorable part of the journey.",
+    image: "/images/destinations/chitwan/bird-watching.jpg",
+    location: "Chitwan National Park",
+    duration: "2–3 hours",
+    bestTime: "October–March",
+    featured: true,
+    tourAvailable: false,
+    highlights: ["Forest walks", "Bird calls", "Wildlife tracking", "Nature photography"],
+  },
+];
+
+const chitwanHighlights: Highlight[] = [
+  {
+    id: "h1",
+    title: "Explore Chitwan National Park",
+    description: "Experience one of Nepal's most famous wildlife sanctuaries.",
+  },
+  {
+    id: "h2",
+    title: "Experience jungle safari adventures",
+    description: "Search for rhinos, tigers and wildlife through guided safaris.",
+  },
+  {
+    id: "h3",
+    title: "Search for the one-horned rhinoceros",
+    description: "Observe this endangered species in its natural habitat.",
+  },
+  {
+    id: "h4",
+    title: "Discover Tharu culture and traditions",
+    description: "Connect with local communities and their heritage.",
+  },
+  {
+    id: "h5",
+    title: "Enjoy canoeing on the Rapti River",
+    description: "Peaceful river journeys with wildlife observation.",
+  },
+  {
+    id: "h6",
+    title: "Visit peaceful wetlands and lakes",
+    description: "Explore Bishazari Tal and birdwatching areas.",
+  },
+  {
+    id: "h7",
+    title: "Experience jungle walks and nature trails",
+    description: "Guided hikes through forest ecosystems.",
+  },
+  {
+    id: "h8",
+    title: "Enjoy beautiful sunsets beside the river",
+    description: "Magical moments as evening light touches the water.",
+  },
+];
+
+const chitwanExperiences: Experience[] = [
+  {
+    id: "e1",
+    title: "Jungle Safari",
+    description: "Experience guided safaris to spot wildlife in natural habitats.",
+    icon: "🐯",
+  },
+  {
+    id: "e2",
+    title: "River Canoeing",
+    description: "Paddle on the Rapti River and observe riverside wildlife.",
+    icon: "🚣",
+  },
+  {
+    id: "e3",
+    title: "Birdwatching",
+    description: "Observe over 450 bird species in diverse ecosystems.",
+    icon: "🦅",
+  },
+  {
+    id: "e4",
+    title: "Cultural Experiences",
+    description: "Learn Tharu traditions and connect with local communities.",
+    icon: "🏛️",
+  },
+];
+
+const chitwanTravelTips: TravelTip[] = [
+  {
+    id: "t1",
+    title: "Best season for visits",
+    description: "October–March offers clear weather and excellent wildlife visibility.",
+    category: "Weather",
+  },
+  {
+    id: "t2",
+    title: "Book through trusted operators",
+    description: "Established safari companies provide experienced guides and safety.",
+    category: "Planning",
+  },
+  {
+    id: "t3",
+    title: "Early morning exploration",
+    description: "Wildlife is most active at sunrise; start early for best sightings.",
+    category: "Activity",
+  },
+  {
+    id: "t4",
+    title: "Respect wildlife and conservation",
+    description: "Follow guide instructions and park regulations to protect ecosystems.",
+    category: "Responsibility",
+  },
+];
+
+const chitwanFaqs: FaqItem[] = [
+  {
+    id: "faq1",
+    question: "What is the best time to visit Chitwan?",
+    answer: "October–March offers the best weather, clear visibility and consistent wildlife activity. Avoid monsoon season (June–August).",
+  },
+  {
+    id: "faq2",
+    question: "Will I definitely see tigers or rhinos?",
+    answer: "Wildlife sightings are not guaranteed, but are common in good seasons with experienced guides. Your guide will maximize opportunities.",
+  },
+  {
+    id: "faq3",
+    question: "Is Chitwan safe for families?",
+    answer: "Yes, with proper guides and following safety rules. Family-friendly lodges and activities make Chitwan suitable for visitors of all ages.",
+  },
+  {
+    id: "faq4",
+    question: "How many days should I spend in Chitwan?",
+    answer: "2–4 days is ideal to experience safaris, river activities, cultural sites and local communities without feeling rushed.",
+  },
+];
+
+const chitwanGallery: GalleryImage[] = [
+  {
+    id: "g1",
+    src: "/images/destinations/chitwan/hero.jpg",
+    alt: "Chitwan wildlife and jungle landscape",
+    category: "Landscape",
+  },
+  {
+    id: "g2",
+    src: "/images/destinations/chitwan/intro.jpg",
+    alt: "Chitwan safari and nature adventure",
+    category: "Wildlife",
+  },
+  {
+    id: "g3",
+    src: "/images/destinations/chitwan/cta.jpg",
+    alt: "Chitwan river and community experience",
+    category: "Culture",
+  },
+];
+
+export const chitwan: Destination = {
+  id: "chitwan",
+  slug: "chitwan",
+  name: "Chitwan",
+  tagline: "Into the Wild Heart of Nepal",
+  shortDescription:
+    "Experience Nepal's wildlife, jungle adventures, Tharu culture and peaceful rivers in the beautiful Chitwan region.",
+  description:
+    "Chitwan is one of Nepal's most exciting destinations for wildlife, nature and cultural experiences. Famous for Chitwan National Park, the region offers travelers opportunities to explore lush forests, observe wildlife, enjoy jungle safaris, discover Tharu traditions and experience peaceful riverside landscapes. From thrilling jungle adventures in Sauraha to cultural experiences and tranquil wetlands, Chitwan offers an unforgettable escape into the natural heart of Nepal.",
+  heroImage: "/images/destinations/chitwan/chitwan.jpg",
+  introImage: "/images/destinations/chitwan/intro.jpg",
+  ctaImage: "/images/destinations/chitwan/cta.jpg",
+  location: "Bagmati Province, Nepal",
+  region: "Southern Central Nepal",
+  knownFor:
+    "Wildlife, jungle safaris, one-horned rhinoceros, Tharu culture, rivers and nature",
+  idealFor: [
+    "Wildlife lovers",
+    "Families",
+    "Photographers",
+    "Adventure seekers",
+    "Nature lovers",
+    "Cultural travelers",
+  ],
+  recommendedDuration: "2–4 Days",
+  bestTime: "October–March",
+  numberOfTours: 12,
+  featured: true,
+  places: chitwanPlaces,
+  highlights: chitwanHighlights,
+  experiences: chitwanExperiences,
+  travelTips: chitwanTravelTips,
+  faqs: chitwanFaqs,
+  gallery: chitwanGallery,
+  seo: {
+    title: "Chitwan National Park | Meegin Tours & Travels",
+    description:
+      "Explore Chitwan's wildlife, jungle safaris, one-horned rhinoceros, Tharu culture and river adventures. Complete travel guide for Nepal's premier wildlife destination.",
+  },
+};

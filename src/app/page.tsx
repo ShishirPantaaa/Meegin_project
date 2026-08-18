@@ -1,69 +1,135 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Hero } from "@/components/sections/hero";
+import { DestinationCard } from "@/components/sections/destination-card";
+import { TourCard } from "@/components/sections/tour-card";
+import { WhyUs } from "@/components/sections/why-us";
+import { Gallery } from "@/components/sections/gallery";
+import { TestimonialCard } from "@/components/sections/testimonial-card";
+import { destinations } from "@/data/destinations";
+import { tours, testimonials, galleryImages, faqs } from "@/lib/data";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="bg-[#F7FAFC] text-[#172033]">
+      <section className="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-8">
+        <Hero />
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+        <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#004AB8]">Popular destinations</p>
+            <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">Top Nepal travel destinations</h2>
+          </div>
+          <Link
+            href="/destinations"
+            className="inline-flex items-center justify-center rounded-full border border-[#0091DA] bg-white px-5 py-3 text-sm font-semibold text-[#004AB8] transition hover:bg-[#EAF7FD]"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            View all destinations
+          </Link>
         </div>
-      </main>
-    </div>
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {destinations.slice(0, 6).map((destination) => (
+            <DestinationCard key={destination.slug} destination={destination} />
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+        <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#004AB8]">Featured packages</p>
+            <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">Popular Nepal tour packages</h2>
+          </div>
+          <Link
+            href="/tours"
+            className="inline-flex items-center justify-center rounded-full border border-[#0091DA] bg-white px-5 py-3 text-sm font-semibold text-[#004AB8] transition hover:bg-[#EAF7FD]"
+          >
+            Browse all tours
+          </Link>
+        </div>
+        <div className="grid gap-6 lg:grid-cols-3">
+          {tours.map((tour) => (
+            <TourCard key={tour.slug} tour={tour} />
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+        <WhyUs />
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+        <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#004AB8]">Popular experiences</p>
+            <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">Discover authentic Nepal adventures</h2>
+          </div>
+          <Button variant="outline" size="sm">Explore experiences</Button>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#0091DA]">Adventure</p>
+            <h3 className="mt-4 text-xl font-semibold text-slate-900">Trekking & mountain vistas</h3>
+            <p className="mt-4 text-sm leading-7 text-slate-600">Hike world-famous trails, explore alpine villages and experience Nepal’s dramatic peaks.</p>
+          </div>
+          <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#0091DA]">Culture</p>
+            <h3 className="mt-4 text-xl font-semibold text-slate-900">Heritage & spiritual journeys</h3>
+            <p className="mt-4 text-sm leading-7 text-slate-600">Visit UNESCO sites, ancient temples and local communities for an authentic Nepal experience.</p>
+          </div>
+          <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#0091DA]">Wildlife</p>
+            <h3 className="mt-4 text-xl font-semibold text-slate-900">Safari & nature reserves</h3>
+            <p className="mt-4 text-sm leading-7 text-slate-600">Explore Chitwan’s jungles, river wildlife and comfortable safari lodges.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+        <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#004AB8]">Travel stories</p>
+            <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">What our travelers say</h2>
+          </div>
+          <Button variant="outline" size="sm">Read more reviews</Button>
+        </div>
+        <div className="grid gap-6 lg:grid-cols-2">
+          {testimonials.map((testimonial) => (
+            <TestimonialCard key={testimonial.name} testimonial={testimonial} />
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+        <Gallery images={galleryImages} />
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
+          <div className="rounded-4xl border border-slate-200 bg-white p-8 shadow-sm">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#004AB8]">FAQ preview</p>
+            <div className="mt-8 space-y-6">
+              {faqs.slice(0, 3).map((faq) => (
+                <div key={faq.question}>
+                  <p className="font-semibold text-slate-900">{faq.question}</p>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-4xl bg-[#004AB8] p-10 text-white shadow-2xl shadow-slate-900/10">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#A7D4FF]">Custom trip planning</p>
+            <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">Can’t find the perfect package?</h2>
+            <p className="mt-4 text-base leading-7 text-slate-100/90">
+              Tell us what kind of Nepal experience you want and our travel team will help design your journey.
+            </p>
+            <Button variant="secondary" size="lg" className="mt-8">Plan My Trip</Button>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
+
