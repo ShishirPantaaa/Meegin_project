@@ -323,7 +323,7 @@ export const pokhara: Destination = {
     "Lakeside gateway to the Annapurna range and Nepal's adventure capital.",
   description:
     "Pokhara is a relaxed mountain city known for lakefront charm, panoramic Himalayan views and a wide range of outdoor activities. From boating on Phewa Lake to sunrise viewpoints above the valley, Pokhara blends natural beauty with cultural and spiritual discovery. It's the perfect base for adventure seekers and those seeking mountain tranquility.",
-  heroImage: "/images/destinations/pokhara.webp",
+  heroImage: "/images/destinations/pokhara/pokhara.jpg",
   introImage: "/images/destinations/pokhara/lakeside.jpg",
   ctaImage: "/images/destinations/pokhara/sarangkot.jpg",
   location: "Western Region",
