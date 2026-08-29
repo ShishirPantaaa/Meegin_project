@@ -20,18 +20,18 @@ export const metadata: Metadata = {
 
 // ─── Destination strip data — derived from actual tour data ───────────────────
 const DEST_IMAGES: Record<string, string | null> = {
-  pokhara: "/images/destinations/pokhara.webp",
+  pokhara: "/images/destinations/pokhara/pokhara.jpg",
   mustang: "/images/destinations/mustang/mustang.jpg",
   chitwan: "/images/destinations/chitwan/chitwan.jpg",
-  lumbini: "/images/destinations/lumbini.jpg",
+  lumbini: "/images/destinations/lumbini/lumbini.jpg",
   palpa: "/images/destinations/palpa/palpa.png",
-  baglung: "/images/destinations/baglung.jpg",
-  kathmandu: "/images/destinations/kathmandu.jpg",
-  bandipur: "/images/destinations/bandipur.jpg",
-  ghandruk: "/images/destinations/ghandruk.jpg",
-  annapurna: "/images/destinations/annapurna-viewpoints.jpg",
-  everest: null, // no root image — will show placeholder
-  bhaktapur: "/images/destinations/Bhaktapur.jpg",
+  baglung: "/images/destinations/baglung/Baglung.jpg",
+  kathmandu: "/images/destinations/kathmandu/kathmandu.jpg",
+  bandipur: "/images/destinations/bandipur/hero.jpg",
+  ghandruk: "/images/destinations/ghandruk/ghandruk.jpg",
+  annapurna: "/images/destinations/annapurna/annapurna-viewpoints.jpg",
+  everest: "/images/destinations/everest/everest-base-camp.jpg",
+  bhaktapur: "/images/destinations/bhaktapur/Bhaktapur.jpg",
 };
 
 export default function ToursPage() {

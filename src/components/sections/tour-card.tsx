@@ -29,7 +29,7 @@ export function TourCard({ tour }: TourCardProps) {
         </div>
         <p className="text-sm leading-6 text-slate-600">{tour.description}</p>
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <span className="text-lg font-semibold text-[#172033]">From NPR {tour.price.toLocaleString()}</span>
+          <span className="text-lg font-semibold text-[#172033]">Best and affordable price</span>
           <Link href={`/tours/${tour.slug}`} className="rounded-full bg-[#0091DA] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#004AB8]">
             View Package
           </Link>

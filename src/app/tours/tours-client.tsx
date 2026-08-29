@@ -505,9 +505,8 @@ function TourCard({ tour, featured = false }: TourCardProps) {
                 {/* Price + CTAs */}
                 <div className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-4">
                     <div>
-                        <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">From</span>
-                        <p className="text-xl font-bold text-[#172033]">
-                            {tour.currency} {tour.price.toLocaleString()}
+                        <p className="text-lg font-bold text-[#172033]">
+                            Best and affordable price
                         </p>
                     </div>
                     <div className="flex gap-2">

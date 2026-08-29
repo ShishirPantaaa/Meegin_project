@@ -1,0 +1,9 @@
+﻿images\destinations\annapurna\annapurna-viewpoints.jpg
+images\destinations\baglung\Baglung.jpg
+images\destinations\bhaktapur\Bhaktapur.jpg
+images\destinations\chitwan\chitwan.jpg
+images\destinations\ghandruk\ghandruk.jpg
+images\destinations\kathmandu\kathmandu.jpg
+images\destinations\lumbini\lumbini.jpg
+images\destinations\mustang\mustang.jpg
+images\destinations\palpa\palpa.png

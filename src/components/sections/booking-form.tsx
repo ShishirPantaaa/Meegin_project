@@ -230,16 +230,8 @@ export function BookingForm({ tour, allTours }: { tour: Tour; allTours: Tour[] }
 
                     <div className="space-y-2 text-sm">
                         <div className="flex justify-between">
-                            <span className="text-slate-500">Base Price</span>
-                            <span className="font-medium text-slate-700">{formattedPrice}</span>
-                        </div>
-                        <div className="flex justify-between border-b border-slate-200 pb-2">
-                            <span className="text-slate-500">Travelers</span>
-                            <span className="font-medium text-slate-700">x {getTravelersNum()}</span>
-                        </div>
-                        <div className="flex justify-between pt-2">
-                            <span className="font-semibold text-slate-900">Estimated Total</span>
-                            <span className="font-bold text-[#0091DA]">{getTravelersNum() > 0 ? formattedSubtotal : "---"}</span>
+                            <span className="text-slate-500">Price</span>
+                            <span className="font-semibold text-[#0091DA]">Best and affordable price</span>
                         </div>
                     </div>
                     <p className="mt-3 text-[10px] uppercase text-slate-400 leading-tight">

@@ -471,7 +471,7 @@ export default function LumbiniPage() {
                   <p className="mt-3 text-sm leading-7 text-slate-600">{tour.description}</p>
                 </div>
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="text-lg font-semibold text-[#172033]">From ${tour.price}</p>
+                  <p className="text-lg font-semibold text-[#172033]">Best and affordable price</p>
                   <Link
                     href={tour.href}
                     className="inline-flex items-center gap-2 rounded-full bg-[#0091DA] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#004AB8]"
