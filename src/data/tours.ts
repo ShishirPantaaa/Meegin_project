@@ -10,7 +10,7 @@ export const tours: Tour[] = [
     title: "Pokhara Lake & Mountain Adventure",
     destination: "Pokhara",
     destinationSlug: "pokhara",
-    duration: "3 Days / 2 Nights",
+    duration: "4 Days / 3 Nights",
     shortDescription:
       "Experience Pokhara's lakes, mountains, and adventure activities.",
     image: "/images/destinations/pokhara/lakeside.jpg",

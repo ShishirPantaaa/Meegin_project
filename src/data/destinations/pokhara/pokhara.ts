@@ -337,7 +337,7 @@ export const pokhara: Destination = {
   ],
   recommendedDuration: "2–5 Days",
   bestTime: "September–November",
-  numberOfTours: 18,
+  numberOfTours: 12,
   featured: true,
   places: pokharaPlaces,
   highlights: pokharaHighlights,

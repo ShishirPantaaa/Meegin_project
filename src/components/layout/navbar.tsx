@@ -64,6 +64,24 @@ export function Navbar() {
 
         {/* Desktop Actions */}
         <div className="hidden items-center gap-3 lg:flex">
+          <a
+            href="https://wa.me/9779748809397"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition hover:border-[#0091DA] hover:text-[#0091DA]"
+          >
+            <Image src="/images/whatsapp.webp" alt="WhatsApp" width={22} height={22} className="h-5.5 w-5.5 object-contain" />
+          </a>
+          <a
+            href="https://www.instagram.com/meegintoursandtravel?stkn=OWJvY2d2cXQyNjJm"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Instagram"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition hover:border-[#0091DA] hover:text-[#0091DA]"
+          >
+            <Image src="/images/instagram-logo.webp" alt="Instagram" width={22} height={22} className="h-5.5 w-5.5 object-contain" />
+          </a>
           <Link
             href="/destinations"
             className="inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-[#0091DA]"
@@ -125,6 +143,28 @@ export function Navbar() {
           >
             Login
           </Link>
+          <div className="flex items-center justify-center gap-3 pt-3">
+            <a
+              href="https://wa.me/9779748809397"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm transition hover:border-[#0091DA]"
+              onClick={() => setOpen(false)}
+            >
+              <Image src="/images/whatsapp.webp" alt="WhatsApp" width={22} height={22} className="h-5.5 w-5.5 object-contain" />
+            </a>
+            <a
+              href="https://www.instagram.com/meegintoursandtravel?stkn=OWJvY2d2cXQyNjJm"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Instagram"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm transition hover:border-[#0091DA]"
+              onClick={() => setOpen(false)}
+            >
+              <Image src="/images/instagram-logo.webp" alt="Instagram" width={22} height={22} className="h-5.5 w-5.5 object-contain" />
+            </a>
+          </div>
           <div className="pt-2">
             <Link
               href="/booking/pokhara-adventure"

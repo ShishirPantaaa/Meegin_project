@@ -3,13 +3,14 @@ export const siteConfig = {
   description:
     "Explore breathtaking destinations, unforgettable experiences and carefully designed journeys across Nepal.",
   url: "https://meegintravels.com",
-  email: "info@meegintravels.com",
-  phone: "+977-01-1234567",
+  email: "meegin.toursandtravel@gmail.com",
+  phone: "+977-985-7078691",
 };
 
 export const navLinks = [
   { title: "Destinations", href: "/destinations" },
   { title: "Tours", href: "/tours" },
+  { title: "Ticketing", href: "/ticketing" },
   { title: "About", href: "/about" },
   { title: "Gallery", href: "/gallery" },
   { title: "Blog", href: "/blog" },
@@ -21,7 +22,7 @@ export const destinations = [
     slug: "pokhara",
     name: "Pokhara",
     description: "Lakeside adventures, mountain views and peaceful valley stays.",
-    tours: 18,
+    tours: 12,
     image:
       "/images/destinations/pokhara/pokhara_intro.jpg",
   },
@@ -37,7 +38,7 @@ export const destinations = [
     slug: "chitwan",
     name: "Chitwan",
     description: "Wildlife safaris, river cruises and jungle lodges in southern Nepal.",
-    tours: 10,
+    tours: 12,
     image:
       "/images/destinations/chitwan/bird-watching.jpg",
   },
@@ -45,7 +46,7 @@ export const destinations = [
     slug: "lumbini",
     name: "Lumbini",
     description: "Sacred pilgrimage site, serene gardens and cultural heritage.",
-    tours: 6,
+    tours: 12,
     image:
       "/images/destinations/lumbini/lumbini.jpg",
   },
@@ -53,7 +54,7 @@ export const destinations = [
     slug: "baglung",
     name: "Baglung",
     description: "Hillside escapes, mountain passes and rural Nepal discoveries.",
-    tours: 8,
+    tours: 12,
     image:
       "/images/destinations/baglung/kalika-bhagawati-temple.jpg",
   },
@@ -61,7 +62,7 @@ export const destinations = [
     slug: "palpa",
     name: "Palpa",
     description: "Historic palaces, terraced valleys and a tranquil hill town experience.",
-    tours: 5,
+    tours: 12,
     image:
       "/images/destinations/palpa/images.jpg",
   },
@@ -69,7 +70,7 @@ export const destinations = [
     slug: "kathmandu",
     name: "Kathmandu",
     description: "Heritage temples, lively bazaars and cultural city adventures.",
-    tours: 20,
+    tours: 12,
     image:
       "/images/destinations/kathmandu/intro.jpg",
   },
@@ -77,7 +78,7 @@ export const destinations = [
     slug: "everest-region",
     name: "Everest Region",
     description: "Iconic Himalayan trekking, Sherpa culture and mountain panoramas.",
-    tours: 14,
+    tours: 12,
     image:
       "/images/destinations/everest/everest-base-camp.jpg",
   },
@@ -85,7 +86,7 @@ export const destinations = [
     slug: "annapurna-region",
     name: "Annapurna Region",
     description: "World-class trails, alpine lakes and stunning mountain scenery.",
-    tours: 22,
+    tours: 12,
     image:
       "/images/destinations/annapurna/annapurna-viewpoints.jpg",
   },
@@ -119,7 +120,7 @@ export const tours = [
     title: "Mustang Cultural Expedition",
     destination: "Mustang",
     destinationSlug: "mustang",
-    duration: "7 Days / 6 Nights",
+    duration: "5 Days / 4 Nights",
     shortDescription: "Explore ancient villages, high desert landscapes and traditional Mustang heritage.",
     description: "An immersive cultural journey through Nepal's remote Himalayan kingdom with visits to Lo Manthang and sacred pilgrimage sites.",
     image: "/images/destinations/mustang/mustang.jpg",

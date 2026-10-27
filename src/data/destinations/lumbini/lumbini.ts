@@ -763,7 +763,7 @@ export const lumbini: Destination = {
   ],
   recommendedDuration: "1–2 Days",
   bestTime: "October–March",
-  numberOfTours: 6,
+  numberOfTours: 12,
   featured: true,
   places: lumbiniPlaces,
   highlights: lumbiniHighlights,

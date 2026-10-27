@@ -94,7 +94,7 @@ export default function BaglungPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#0091DA]/5 via-white to-[#004AB8]/5 p-8 sm:p-12 border border-blue-100/50 shadow-xl shadow-blue-900/5">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-linear-to-br from-[#0091DA]/5 via-white to-[#004AB8]/5 p-8 sm:p-12 border border-blue-100/50 shadow-xl shadow-blue-900/5">
           <div className="absolute top-0 right-0 -mr-20 -mt-20 h-64 w-64 rounded-full bg-blue-100 blur-3xl opacity-50"></div>
           <div className="absolute bottom-0 left-0 -ml-20 -mb-20 h-64 w-64 rounded-full bg-emerald-100 blur-3xl opacity-50"></div>
 
@@ -140,7 +140,7 @@ export default function BaglungPage() {
               return (
                 <div key={i} className="group flex flex-col items-start transition-all duration-300 hover:-translate-y-1">
                   <div className={`mb-4 flex h-14 w-14 items-center justify-center rounded-2xl ${stat.bg} ${stat.color} shadow-sm group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className="h-6 w-6 stroke-[2]" />
+                    <Icon className="h-6 w-6 stroke-2" />
                   </div>
                   <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">{stat.label}</p>
                   <p className="mt-2 text-lg font-semibold text-slate-900 leading-tight">{stat.value}</p>

@@ -963,7 +963,7 @@ export const baglung: Destination = {
   ],
   recommendedDuration: "2–5 Days",
   bestTime: "March–May and September–November",
-  numberOfTours: 8,
+  numberOfTours: 12,
   featured: true,
   places: baglungPlaces,
   highlights: baglungHighlights,

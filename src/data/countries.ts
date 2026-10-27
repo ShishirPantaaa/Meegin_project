@@ -1,0 +1,88 @@
+export type LocationSuggestion = {
+  value: string;
+  label: string;
+  country?: string;
+  code?: string;
+  region?: string;
+  continent?: string;
+  kind: "city" | "airport" | "country";
+  popular?: boolean;
+};
+
+export const countrySuggestions: LocationSuggestion[] = [
+  { value: "Kathmandu", label: "Kathmandu, Nepal", country: "Nepal", code: "KTM", region: "Nepal", continent: "Asia", kind: "city", popular: true },
+  { value: "Delhi", label: "Delhi, India", country: "India", code: "DEL", region: "India", continent: "Asia", kind: "city", popular: true },
+  { value: "Mumbai", label: "Mumbai, India", country: "India", code: "BOM", region: "India", continent: "Asia", kind: "city", popular: true },
+  { value: "Dubai", label: "Dubai, United Arab Emirates", country: "United Arab Emirates", code: "DXB", region: "Middle East", continent: "Asia", kind: "city", popular: true },
+  { value: "Abu Dhabi", label: "Abu Dhabi, United Arab Emirates", country: "United Arab Emirates", code: "AUH", region: "Middle East", continent: "Asia", kind: "city", popular: true },
+  { value: "Doha", label: "Doha, Qatar", country: "Qatar", code: "DOH", region: "Middle East", continent: "Asia", kind: "city", popular: true },
+  { value: "Bangkok", label: "Bangkok, Thailand", country: "Thailand", code: "BKK", region: "Southeast Asia", continent: "Asia", kind: "city", popular: true },
+  { value: "Kuala Lumpur", label: "Kuala Lumpur, Malaysia", country: "Malaysia", code: "KUL", region: "Southeast Asia", continent: "Asia", kind: "city", popular: true },
+  { value: "Singapore", label: "Singapore, Singapore", country: "Singapore", code: "SIN", region: "Southeast Asia", continent: "Asia", kind: "city", popular: true },
+  { value: "Tokyo", label: "Tokyo, Japan", country: "Japan", code: "NRT", region: "East Asia", continent: "Asia", kind: "city", popular: true },
+  { value: "Seoul", label: "Seoul, South Korea", country: "South Korea", code: "ICN", region: "East Asia", continent: "Asia", kind: "city", popular: true },
+  { value: "Colombo", label: "Colombo, Sri Lanka", country: "Sri Lanka", code: "CMB", region: "South Asia", continent: "Asia", kind: "city", popular: true },
+  { value: "Malé", label: "Malé, Maldives", country: "Maldives", code: "MLE", region: "South Asia", continent: "Asia", kind: "city", popular: true },
+  { value: "London", label: "London, United Kingdom", country: "United Kingdom", code: "LHR", region: "Europe", continent: "Europe", kind: "city", popular: true },
+  { value: "Paris", label: "Paris, France", country: "France", code: "CDG", region: "Europe", continent: "Europe", kind: "city", popular: true },
+  { value: "Frankfurt", label: "Frankfurt, Germany", country: "Germany", code: "FRA", region: "Europe", continent: "Europe", kind: "city", popular: true },
+  { value: "Rome", label: "Rome, Italy", country: "Italy", code: "FCO", region: "Europe", continent: "Europe", kind: "city", popular: true },
+  { value: "Amsterdam", label: "Amsterdam, Netherlands", country: "Netherlands", code: "AMS", region: "Europe", continent: "Europe", kind: "city", popular: true },
+  { value: "New York", label: "New York, United States", country: "United States", code: "JFK", region: "North America", continent: "North America", kind: "city", popular: true },
+  { value: "Los Angeles", label: "Los Angeles, United States", country: "United States", code: "LAX", region: "North America", continent: "North America", kind: "city", popular: true },
+  { value: "Toronto", label: "Toronto, Canada", country: "Canada", code: "YYZ", region: "North America", continent: "North America", kind: "city", popular: true },
+  { value: "Sydney", label: "Sydney, Australia", country: "Australia", code: "SYD", region: "Oceania", continent: "Oceania", kind: "city", popular: true },
+  { value: "Melbourne", label: "Melbourne, Australia", country: "Australia", code: "MEL", region: "Oceania", continent: "Oceania", kind: "city", popular: true },
+  { value: "Auckland", label: "Auckland, New Zealand", country: "New Zealand", code: "AKL", region: "Oceania", continent: "Oceania", kind: "city", popular: true },
+  { value: "Cairo", label: "Cairo, Egypt", country: "Egypt", code: "CAI", region: "Africa", continent: "Africa", kind: "city", popular: true },
+  { value: "Nairobi", label: "Nairobi, Kenya", country: "Kenya", code: "NBO", region: "Africa", continent: "Africa", kind: "city", popular: true },
+  { value: "Johannesburg", label: "Johannesburg, South Africa", country: "South Africa", code: "JNB", region: "Africa", continent: "Africa", kind: "city", popular: true },
+  { value: "São Paulo", label: "São Paulo, Brazil", country: "Brazil", code: "GRU", region: "South America", continent: "South America", kind: "city", popular: true },
+  { value: "Nepal", label: "Nepal", country: "Nepal", region: "Asia", continent: "Asia", kind: "country" },
+  { value: "India", label: "India", country: "India", region: "Asia", continent: "Asia", kind: "country" },
+  { value: "United Arab Emirates", label: "United Arab Emirates", country: "United Arab Emirates", region: "Middle East", continent: "Asia", kind: "country" },
+  { value: "Qatar", label: "Qatar", country: "Qatar", region: "Middle East", continent: "Asia", kind: "country" },
+  { value: "Thailand", label: "Thailand", country: "Thailand", region: "Southeast Asia", continent: "Asia", kind: "country" },
+  { value: "Malaysia", label: "Malaysia", country: "Malaysia", region: "Southeast Asia", continent: "Asia", kind: "country" },
+  { value: "Singapore", label: "Singapore", country: "Singapore", region: "Southeast Asia", continent: "Asia", kind: "country" },
+  { value: "Japan", label: "Japan", country: "Japan", region: "East Asia", continent: "Asia", kind: "country" },
+  { value: "South Korea", label: "South Korea", country: "South Korea", region: "East Asia", continent: "Asia", kind: "country" },
+  { value: "Sri Lanka", label: "Sri Lanka", country: "Sri Lanka", region: "South Asia", continent: "Asia", kind: "country" },
+  { value: "Maldives", label: "Maldives", country: "Maldives", region: "South Asia", continent: "Asia", kind: "country" },
+  { value: "United Kingdom", label: "United Kingdom", country: "United Kingdom", region: "Europe", continent: "Europe", kind: "country" },
+  { value: "France", label: "France", country: "France", region: "Europe", continent: "Europe", kind: "country" },
+  { value: "Germany", label: "Germany", country: "Germany", region: "Europe", continent: "Europe", kind: "country" },
+  { value: "Italy", label: "Italy", country: "Italy", region: "Europe", continent: "Europe", kind: "country" },
+  { value: "Netherlands", label: "Netherlands", country: "Netherlands", region: "Europe", continent: "Europe", kind: "country" },
+  { value: "United States", label: "United States", country: "United States", region: "North America", continent: "North America", kind: "country" },
+  { value: "Canada", label: "Canada", country: "Canada", region: "North America", continent: "North America", kind: "country" },
+  { value: "Australia", label: "Australia", country: "Australia", region: "Oceania", continent: "Oceania", kind: "country" },
+  { value: "New Zealand", label: "New Zealand", country: "New Zealand", region: "Oceania", continent: "Oceania", kind: "country" },
+  { value: "Egypt", label: "Egypt", country: "Egypt", region: "Africa", continent: "Africa", kind: "country" },
+  { value: "Kenya", label: "Kenya", country: "Kenya", region: "Africa", continent: "Africa", kind: "country" },
+  { value: "South Africa", label: "South Africa", country: "South Africa", region: "Africa", continent: "Africa", kind: "country" },
+  { value: "Brazil", label: "Brazil", country: "Brazil", region: "South America", continent: "South America", kind: "country" },
+  { value: "Tribhuvan International Airport", label: "Tribhuvan International Airport (KTM)", country: "Nepal", code: "KTM", region: "Nepal", continent: "Asia", kind: "airport" },
+  { value: "Dubai International Airport", label: "Dubai International Airport (DXB)", country: "United Arab Emirates", code: "DXB", region: "Middle East", continent: "Asia", kind: "airport" },
+  { value: "Heathrow Airport", label: "Heathrow Airport (LHR)", country: "United Kingdom", code: "LHR", region: "Europe", continent: "Europe", kind: "airport" },
+  { value: "Changi Airport", label: "Changi Airport (SIN)", country: "Singapore", code: "SIN", region: "Southeast Asia", continent: "Asia", kind: "airport" },
+  { value: "Suvarnabhumi Airport", label: "Suvarnabhumi Airport (BKK)", country: "Thailand", code: "BKK", region: "Southeast Asia", continent: "Asia", kind: "airport" },
+  { value: "Kuala Lumpur International Airport", label: "Kuala Lumpur International Airport (KUL)", country: "Malaysia", code: "KUL", region: "Southeast Asia", continent: "Asia", kind: "airport" },
+  { value: "Indira Gandhi International Airport", label: "Indira Gandhi International Airport (DEL)", country: "India", code: "DEL", region: "India", continent: "Asia", kind: "airport" },
+  { value: "Hamad International Airport", label: "Hamad International Airport (DOH)", country: "Qatar", code: "DOH", region: "Middle East", continent: "Asia", kind: "airport" },
+  { value: "Charles de Gaulle Airport", label: "Charles de Gaulle Airport (CDG)", country: "France", code: "CDG", region: "Europe", continent: "Europe", kind: "airport" },
+  { value: "Frankfurt Airport", label: "Frankfurt Airport (FRA)", country: "Germany", code: "FRA", region: "Europe", continent: "Europe", kind: "airport" },
+  { value: "JFK Airport", label: "JFK Airport (JFK)", country: "United States", code: "JFK", region: "North America", continent: "North America", kind: "airport" },
+  { value: "Sydney Airport", label: "Sydney Airport (SYD)", country: "Australia", code: "SYD", region: "Oceania", continent: "Oceania", kind: "airport" },
+  { value: "Tokyo Haneda Airport", label: "Tokyo Haneda Airport (HND)", country: "Japan", code: "HND", region: "East Asia", continent: "Asia", kind: "airport" },
+  { value: "Incheon International Airport", label: "Incheon International Airport (ICN)", country: "South Korea", code: "ICN", region: "East Asia", continent: "Asia", kind: "airport" },
+  { value: "Bandaranaike International Airport", label: "Bandaranaike International Airport (CMB)", country: "Sri Lanka", code: "CMB", region: "South Asia", continent: "Asia", kind: "airport" },
+  { value: "Velana International Airport", label: "Velana International Airport (MLE)", country: "Maldives", code: "MLE", region: "South Asia", continent: "Asia", kind: "airport" },
+  { value: "Auckland Airport", label: "Auckland Airport (AKL)", country: "New Zealand", code: "AKL", region: "Oceania", continent: "Oceania", kind: "airport" },
+  { value: "Cairo International Airport", label: "Cairo International Airport (CAI)", country: "Egypt", code: "CAI", region: "Africa", continent: "Africa", kind: "airport" },
+  { value: "Jomo Kenyatta International Airport", label: "Jomo Kenyatta International Airport (NBO)", country: "Kenya", code: "NBO", region: "Africa", continent: "Africa", kind: "airport" },
+  { value: "São Paulo-Guarulhos Airport", label: "São Paulo-Guarulhos Airport (GRU)", country: "Brazil", code: "GRU", region: "South America", continent: "South America", kind: "airport" },
+];
+
+export const popularDestinations = countrySuggestions.filter((item) => item.popular);
+export const allLocationSuggestions = countrySuggestions;

@@ -40,6 +40,28 @@ body {
   .hero-image-top-glow {
     background-image: radial-gradient(circle at top, rgba(255, 255, 255, 0.14), transparent 55%);
   }
+
+  .event-popup-panel {
+    animation: event-popup-fade 0.22s ease-out both;
+  }
+}
+
+@keyframes event-popup-fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .event-popup-panel {
+    animation: none;
+  }
 }
 
 * {

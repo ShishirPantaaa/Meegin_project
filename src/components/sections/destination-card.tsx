@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Clock3 } from "lucide-react";
 import type { Destination } from "@/types";
 import { isValidImageSrc } from "@/lib/utils";
 
@@ -9,8 +9,6 @@ interface DestinationCardProps {
 }
 
 export function DestinationCard({ destination }: DestinationCardProps) {
-  const tourCount = destination.numberOfTours ?? destination.tours ?? 0;
-
   return (
     <div className="group overflow-hidden rounded-3xl sm:rounded-4xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
       <Link href={`/destinations/${destination.slug}`} className="block h-56 sm:h-64 overflow-hidden rounded-t-3xl sm:rounded-t-4xl">
@@ -33,10 +31,11 @@ export function DestinationCard({ destination }: DestinationCardProps) {
           <div>
             <h3 className="text-xl font-semibold text-slate-900">{destination.name}</h3>
             <p className="mt-2 text-sm leading-6 text-slate-600">{destination.shortDescription}</p>
+            <p className="mt-3 flex items-center gap-2 text-sm font-medium text-slate-500">
+              <Clock3 className="h-4 w-4 text-[#0091DA]" aria-hidden="true" />
+              Recommended: {destination.recommendedDuration}
+            </p>
           </div>
-          <span className="rounded-3xl bg-[#ECF8EF] px-3 py-2 text-xs font-semibold text-[#068835]">
-            {tourCount} tours
-          </span>
         </div>
         <Link href={`/destinations/${destination.slug}`} className="flex items-center gap-2 text-sm font-semibold text-[#0091DA] transition hover:translate-x-1">
           View Tours <ArrowRight className="h-4 w-4" />

@@ -467,7 +467,7 @@ export const annapurna: Destination = {
   ],
   recommendedDuration: "5–20 Days",
   bestTime: "Sept–Nov & Mar–May",
-  numberOfTours: 3,
+  numberOfTours: 12,
   featured: true,
   places: annapurnaPlaces,
   highlights: annapurnaHighlights,

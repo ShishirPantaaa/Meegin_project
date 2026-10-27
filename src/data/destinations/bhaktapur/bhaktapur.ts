@@ -776,7 +776,7 @@ export const bhaktapur: Destination = {
     ],
     recommendedDuration: "1–3 Days",
     bestTime: "September–May",
-    numberOfTours: 4,
+    numberOfTours: 12,
     featured: true,
     places: bhaktapurPlaces,
     highlights: bhaktapurHighlights,

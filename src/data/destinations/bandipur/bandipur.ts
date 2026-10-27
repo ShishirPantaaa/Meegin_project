@@ -415,7 +415,7 @@ export const bandipur: Destination = {
   ],
   recommendedDuration: "1–3 Days",
   bestTime: "September–May",
-  numberOfTours: 1, // Reflecting the actual current mapped tours (Bandipur Heritage)
+  numberOfTours: 12, // Standard tour count shown on destination cards
   featured: true,
   places: bandipurPlaces,
   highlights: bandipurHighlights,

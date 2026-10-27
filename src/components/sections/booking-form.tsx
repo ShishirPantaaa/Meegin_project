@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
     User,
     Mail,
-    Phone,
     Calendar,
     Users,
     MapPin,
@@ -38,7 +37,6 @@ export function BookingForm({ tour, allTours }: { tour: Tour; allTours: Tour[] }
     /* form state */
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
     const [country, setCountry] = useState("");
 
     const [travelDate, setTravelDate] = useState("");
@@ -50,7 +48,7 @@ export function BookingForm({ tour, allTours }: { tour: Tour; allTours: Tour[] }
     const [pickupLocation, setPickupLocation] = useState("");
 
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isSuccess, setIsSuccess] = useState(false);
+    const [isSuccess] = useState(false);
     const [formError, setFormError] = useState<string | null>(null);
 
     /* validation trackers */
@@ -78,7 +76,6 @@ export function BookingForm({ tour, allTours }: { tour: Tour; allTours: Tour[] }
         email:
             touched.email && !email.trim() ? "Please enter your email address." :
                 touched.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? "Please enter a valid email address." : null,
-        phone: touched.phone && phone.trim().length < 7 ? "Please enter your phone number." : null,
         travelDate: touched.travelDate && !travelDate ? "Please select your preferred travel date." : null,
         travelers: touched.travelers && getTravelersNum() < 1 ? "Please enter at least 1 traveler." : null,
     };
@@ -86,7 +83,6 @@ export function BookingForm({ tour, allTours }: { tour: Tour; allTours: Tour[] }
     const isFormValid =
         name.trim().length >= 2 &&
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) &&
-        phone.trim().length >= 7 &&
         travelDate !== "" &&
         getTravelersNum() >= 1;
 
@@ -104,7 +100,6 @@ export function BookingForm({ tour, allTours }: { tour: Tour; allTours: Tour[] }
             setTouched({
                 name: true,
                 email: true,
-                phone: true,
                 travelDate: true,
                 travelers: true,
             });
@@ -114,14 +109,41 @@ export function BookingForm({ tour, allTours }: { tour: Tour; allTours: Tour[] }
 
             setIsSubmitting(true);
 
-            /* Simulate network delay — this isolates UI behavior */
-            await new Promise((r) => setTimeout(r, 1500));
+            const whatsappMessage = [
+                "Hello MEegin Tours & Travels,",
+                "",
+                "New Tour Booking Request",
+                "",
+                `Package / Destination: ${tour.title} - ${tour.destination}`,
+                "",
+                "Personal Information",
+                `Full Name: ${name}`,
+                `Email Address: ${email}`,
+                `Country of Residence: ${country || "Not provided"}`,
+                "",
+                "Trip Information",
+                `Preferred Travel Date: ${travelDate}`,
+                `Number of Travelers: ${travelers}`,
+                `Adults: ${adults || "Not provided"}`,
+                `Children: ${children || "Not provided"}`,
+                "",
+                "Additional Information",
+                `Hotel / Pickup Location: ${pickupLocation || "Not provided"}`,
+                `Special Requests / Requirements: ${message || "Not provided"}`,
+                "",
+                "Please contact the customer to confirm availability and booking details.",
+                "",
+                "Thank you.",
+            ].join("\n");
 
+            window.open(
+                `https://wa.me/9779748809397?text=${encodeURIComponent(whatsappMessage)}`,
+                "_blank",
+                "noopener,noreferrer"
+            );
             setIsSubmitting(false);
-            setIsSuccess(true);
-            window.scrollTo({ top: 0, behavior: "smooth" });
         },
-        [isFormValid]
+        [adults, children, country, email, isFormValid, message, name, pickupLocation, tour.destination, tour.title, travelDate, travelers]
     );
 
     if (isSuccess) {
@@ -196,7 +218,7 @@ export function BookingForm({ tour, allTours }: { tour: Tour; allTours: Tour[] }
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="line-clamp-2 text-xl font-bold leading-tight text-white">{tour.title}</h3>
                 </div>
@@ -356,30 +378,6 @@ export function BookingForm({ tour, allTours }: { tour: Tour; allTours: Tour[] }
                                     />
                                 </div>
                                 {errors.email && <p className="mt-1.5 flex items-center gap-1.5 text-xs text-red-500"><AlertCircle className="h-3 w-3" />{errors.email}</p>}
-                            </div>
-
-                            {/* Phone */}
-                            <div>
-                                <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-slate-700">
-                                    Phone Number <span className="text-red-500">*</span>
-                                </label>
-                                <div className="relative">
-                                    <span className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"><Phone className="h-4 w-4" /></span>
-                                    <input
-                                        id="phone"
-                                        type="tel"
-                                        required
-                                        value={phone}
-                                        onChange={(e) => setPhone(e.target.value)}
-                                        onBlur={handleBlur("phone")}
-                                        placeholder="+977..."
-                                        className={cn(
-                                            "w-full rounded-xl border bg-white py-3 pl-10 pr-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#0091DA] focus:ring-2 focus:ring-[#0091DA]/15",
-                                            errors.phone ? "border-red-300 focus:border-red-400 focus:ring-red-400/15" : "border-slate-200"
-                                        )}
-                                    />
-                                </div>
-                                {errors.phone && <p className="mt-1.5 flex items-center gap-1.5 text-xs text-red-500"><AlertCircle className="h-3 w-3" />{errors.phone}</p>}
                             </div>
 
                             {/* Country */}

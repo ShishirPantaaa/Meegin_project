@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { tours } from "@/data/tours";
 import { ToursClient, DestinationStrip } from "./tours-client";
 
@@ -58,7 +59,9 @@ export default function ToursPage() {
 
   return (
     <main className="bg-[#F7FAFC] text-[#172033]">
-      <ToursClient allTours={tours} featuredTours={featuredTours} />
+      <Suspense fallback={<div className="mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 lg:px-8" />}> 
+        <ToursClient allTours={tours} featuredTours={featuredTours} />
+      </Suspense>
       <DestinationStrip destinations={destinationStripData} />
     </main>
   );

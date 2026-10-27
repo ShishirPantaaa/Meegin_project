@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin, ChevronRight, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -55,11 +56,11 @@ export default function ContactPage() {
 
       {/* ── Contact Information Cards ────────────────────────────────────────── */}
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8 -mt-6 sm:-mt-12 relative z-10">
-        <div className="grid gap-6 sm:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6">
 
           <a
             href={`tel:${siteConfig.phone.replace(/[^0-9+]/g, "")}`}
-            className="group flex flex-col items-center rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:border-[#0091DA] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0091DA]"
+            className="group flex min-h-67.5 flex-col items-center justify-start rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#0091DA] hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0091DA]"
           >
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#EAF7FD] text-[#0091DA] transition-colors group-hover:bg-[#0091DA] group-hover:text-white">
               <Phone className="h-6 w-6" />
@@ -71,21 +72,42 @@ export default function ContactPage() {
           </a>
 
           <a
-            href={`mailto:${siteConfig.email}`}
-            className="group flex flex-col items-center rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:border-[#0091DA] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0091DA]"
+            href="https://wa.me/9779748809397"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex min-h-67.5 flex-col items-center justify-start rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#0091DA] hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0091DA]"
+          >
+            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#EAF7FD] text-[#0091DA] transition-colors group-hover:bg-[#0091DA] group-hover:text-white">
+              <Image
+                src="/images/whatsapp.webp"
+                alt="WhatsApp"
+                width={28}
+                height={28}
+                className="h-7 w-7 object-contain"
+              />
+            </div>
+            <h3 className="mt-5 text-lg font-semibold text-slate-900">WhatsApp us</h3>
+            <p className="mt-2 text-base font-medium text-slate-600 group-hover:text-[#0091DA]">
+              +977-9748809397
+            </p>
+          </a>
+
+          <a
+            href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Travel Enquiry")}&body=${encodeURIComponent("Hello MEegin Tours & Travels,\n\nI would like to enquire about your travel services.\n\nThank you.")}`}
+            className="group flex min-h-67.5 flex-col items-center justify-start rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#0091DA] hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0091DA]"
           >
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#EAF7FD] text-[#0091DA] transition-colors group-hover:bg-[#0091DA] group-hover:text-white">
               <Mail className="h-6 w-6" />
             </div>
             <h3 className="mt-5 text-lg font-semibold text-slate-900">Email us</h3>
-            <p className="mt-2 text-base font-medium text-slate-600 group-hover:text-[#0091DA]">
+            <p className="mt-2 max-w-full break-all text-sm font-medium leading-6 text-slate-600 group-hover:text-[#0091DA]">
               {siteConfig.email}
             </p>
           </a>
 
           <a
             href="#office"
-            className="group flex flex-col items-center rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:border-[#0091DA] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0091DA]"
+            className="group flex min-h-67.5 flex-col items-center justify-start rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#0091DA] hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0091DA]"
           >
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#EAF7FD] text-[#0091DA] transition-colors group-hover:bg-[#0091DA] group-hover:text-white">
               <MapPin className="h-6 w-6" />
@@ -95,6 +117,48 @@ export default function ContactPage() {
               <p>{siteConfig.name}</p>
               <p className="group-hover:text-[#0091DA]">Butwal, Nepal</p>
             </div>
+          </a>
+
+          <a
+            href="https://www.facebook.com/profile.php?id=61584544724201"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex min-h-67.5 flex-col items-center justify-start rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#0091DA] hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0091DA]"
+          >
+            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#EAF7FD] text-[#0091DA] transition-colors group-hover:bg-[#0091DA] group-hover:text-white">
+              <Image
+                src="/images/facebook.jpg"
+                alt="Facebook"
+                width={28}
+                height={28}
+                className="h-7 w-7 object-contain"
+              />
+            </div>
+            <h3 className="mt-5 text-lg font-semibold text-slate-900">Follow us on Facebook</h3>
+            <p className="mt-2 text-base font-medium text-slate-600 group-hover:text-[#0091DA]">
+              Visit our Facebook page
+            </p>
+          </a>
+
+          <a
+            href="https://www.instagram.com/meegintoursandtravel?stkn=OWJvY2d2cXQyNjJm"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex min-h-67.5 flex-col items-center justify-start rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#0091DA] hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0091DA]"
+          >
+            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#EAF7FD] text-[#0091DA] transition-colors group-hover:bg-[#0091DA] group-hover:text-white">
+              <Image
+                src="/images/instagram-logo.webp"
+                alt="Instagram"
+                width={28}
+                height={28}
+                className="h-7 w-7 object-contain"
+              />
+            </div>
+            <h3 className="mt-5 text-lg font-semibold text-slate-900">Follow us on Instagram</h3>
+            <p className="mt-2 text-base font-medium text-slate-600 group-hover:text-[#0091DA]">
+              Visit our Instagram page
+            </p>
           </a>
 
         </div>

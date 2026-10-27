@@ -916,7 +916,7 @@ export const palpa: Destination = {
   ],
   recommendedDuration: "2–3 Days",
   bestTime: "September–May",
-  numberOfTours: 8,
+  numberOfTours: 12,
   featured: true,
   places: palpaPlaces,
   highlights: palpaHighlights,

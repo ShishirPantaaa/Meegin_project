@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
     Search,
     Star,
@@ -69,11 +70,30 @@ interface ToursClientProps {
 }
 
 export function ToursClient({ allTours, featuredTours }: ToursClientProps) {
+    const router = useRouter();
+    const searchParams = useSearchParams();
     const [search, setSearch] = useState("");
     const [selectedDestination, setSelectedDestination] = useState("All");
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [sortBy, setSortBy] = useState("recommended");
     const [showFilters, setShowFilters] = useState(false);
+
+    const destinationFilter = useMemo(() => {
+        const destinationParam = searchParams.get("destination");
+        if (!destinationParam) {
+            return selectedDestination;
+        }
+
+        const match = allTours.find(
+            (tour) => tour.destinationSlug.toLowerCase() === destinationParam.toLowerCase()
+        );
+
+        if (match) {
+            return match.destination;
+        }
+
+        return destinationParam.toLowerCase() === "baglung" ? "Baglung" : selectedDestination;
+    }, [allTours, searchParams, selectedDestination]);
 
     // Unique destinations from data
     const destinations = useMemo(() => {
@@ -93,7 +113,7 @@ export function ToursClient({ allTours, featuredTours }: ToursClientProps) {
                 (tour.highlights ?? []).some((h) => h.toLowerCase().includes(q));
 
             const matchesDest =
-                selectedDestination === "All" || tour.destination === selectedDestination;
+                destinationFilter === "All" || tour.destination === destinationFilter;
 
             const matchesCat =
                 selectedCategory === "All" || getCategory(tour) === selectedCategory;
@@ -126,15 +146,16 @@ export function ToursClient({ allTours, featuredTours }: ToursClientProps) {
         }
 
         return result;
-    }, [allTours, search, selectedDestination, selectedCategory, sortBy]);
+    }, [allTours, search, destinationFilter, selectedCategory, sortBy]);
 
-    const hasFilters = search || selectedDestination !== "All" || selectedCategory !== "All";
+    const hasFilters = search || destinationFilter !== "All" || selectedCategory !== "All";
 
     function clearFilters() {
         setSearch("");
         setSelectedDestination("All");
         setSelectedCategory("All");
         setSortBy("recommended");
+        router.push("/tours");
     }
 
     return (
@@ -277,7 +298,7 @@ export function ToursClient({ allTours, featuredTours }: ToursClientProps) {
                             <div className="relative">
                                 <select
                                     id="dest-filter"
-                                    value={selectedDestination}
+                                    value={destinationFilter}
                                     onChange={(e) => setSelectedDestination(e.target.value)}
                                     className="appearance-none rounded-full border border-slate-200 bg-white py-2.5 pl-4 pr-9 text-sm font-semibold text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0091DA]"
                                 >
@@ -327,7 +348,7 @@ export function ToursClient({ allTours, featuredTours }: ToursClientProps) {
                                 <div className="relative">
                                     <select
                                         id="dest-filter-mobile"
-                                        value={selectedDestination}
+                                        value={destinationFilter}
                                         onChange={(e) => setSelectedDestination(e.target.value)}
                                         className="w-full appearance-none rounded-full border border-slate-200 bg-[#F7FAFC] py-3 pl-4 pr-9 text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#0091DA]"
                                     >
@@ -382,7 +403,7 @@ export function ToursClient({ allTours, featuredTours }: ToursClientProps) {
                             "Helpful customer support",
                         ].map((point) => (
                             <div key={point} className="flex items-start gap-3">
-                                <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#068835]" aria-hidden="true" />
+                                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#068835]" aria-hidden="true" />
                                 <span className="text-sm font-semibold leading-6 text-slate-700">{point}</span>
                             </div>
                         ))}
@@ -569,7 +590,7 @@ export function DestinationStrip({ destinations }: DestinationStripProps) {
                                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
                                 />
                             ) : (
-                                <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#EAF7FD] to-[#F7FAFC] text-[#0091DA]">
+                                <div className="flex h-full w-full items-center justify-center bg-linear-to-br from-[#EAF7FD] to-[#F7FAFC] text-[#0091DA]">
                                     <MapPin className="h-8 w-8 opacity-40" aria-hidden="true" />
                                 </div>
                             )}

@@ -4,6 +4,7 @@ import favicon from "./favicone.png";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { EventPopup, eventConfig } from "@/components/ui/event-popup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         {children}
         <Footer />
+        <EventPopup config={eventConfig} />
       </body>
     </html>
   );

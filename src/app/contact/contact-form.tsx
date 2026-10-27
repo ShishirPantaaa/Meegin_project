@@ -28,17 +28,28 @@ export function ContactForm() {
 
         setStatus("submitting");
 
-        // Simulate sending time
-        setTimeout(() => {
-            setStatus("success");
-            setFormData({
-                name: "",
-                email: "",
-                phone: "",
-                subject: "General Enquiry",
-                message: ""
-            });
-        }, 1500);
+        const whatsappMessage = [
+            "Hello MEegin Tours & Travels,",
+            "",
+            "New Travel Enquiry",
+            "",
+            `Full Name: ${formData.name}`,
+            `Email Address: ${formData.email}`,
+            `Phone Number: ${formData.phone || "Not provided"}`,
+            `Subject / Enquiry Type: ${formData.subject}`,
+            `Message: ${formData.message}`,
+            "",
+            "Please follow up with this customer regarding their enquiry.",
+            "",
+            "Thank you.",
+        ].join("\n");
+
+        window.open(
+            `https://wa.me/9779748809397?text=${encodeURIComponent(whatsappMessage)}`,
+            "_blank",
+            "noopener,noreferrer"
+        );
+        setStatus("idle");
     };
 
     if (status === "success") {
@@ -65,7 +76,7 @@ export function ContactForm() {
         <form onSubmit={handleSubmit} className="space-y-6">
             {status === "error" && (
                 <div className="flex items-center gap-3 rounded-2xl bg-red-50 p-4 text-red-600">
-                    <AlertCircle className="h-5 w-5 flex-shrink-0" />
+                    <AlertCircle className="h-5 w-5 shrink-0" />
                     <p className="text-sm font-medium">Please fill in all required fields.</p>
                 </div>
             )}

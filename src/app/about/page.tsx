@@ -112,7 +112,7 @@ const destinations = [
   {
     name: "Pokhara",
     slug: "pokhara",
-    image: "/images/destinations/pokhara/pokhara.webp",
+    image: "/images/destinations/pokhara/pokhara_intro.jpg",
     tagline: "City of Lakes & Mountains",
   },
   {
@@ -366,7 +366,7 @@ export default function AboutPage() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center text-sm font-semibold uppercase tracking-[0.1em] text-slate-400">
+                  <div className="flex h-full w-full items-center justify-center text-sm font-semibold uppercase tracking-widest text-slate-400">
                     Image coming soon
                   </div>
                 )}
@@ -400,7 +400,7 @@ export default function AboutPage() {
               <ul className="mt-8 space-y-4" role="list">
                 {trustPoints.map((point) => (
                   <li key={point} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#068835]" aria-hidden="true" />
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#068835]" aria-hidden="true" />
                     <span className="text-sm leading-6 text-slate-700">{point}</span>
                   </li>
                 ))}
