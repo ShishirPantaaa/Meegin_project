@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Search } from "lucide-react";
 import { navLinks } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import logo from "@/app/favicone.png";
+
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -36,7 +36,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex min-w-0 items-center gap-2 sm:gap-3" onClick={() => setOpen(false)}>
           <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-xl bg-white shadow-md shadow-[#0091DA]/15 sm:h-12 sm:w-12 sm:rounded-2xl">
-            <Image src={logo} alt="MEegin Tours logo" className="object-cover" fill />
+            <Image src="/logo.png" alt="MEegin Tours logo" className="object-cover" fill />
           </div>
           <div className="min-w-0">
             <p className="truncate text-xs font-semibold uppercase tracking-[0.14em] text-[#004AB8] sm:text-sm sm:tracking-[0.18em]">

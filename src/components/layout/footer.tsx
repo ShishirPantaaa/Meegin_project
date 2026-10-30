@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone, Share2, Globe } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/data";
-import logo from "@/app/favicone.png";
+
 import Image from "next/image";
 
 export function Footer() {
@@ -13,7 +13,7 @@ export function Footer() {
             {/* Logo */}
             <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-2xl bg-white shadow-md shadow-[#0091DA]/15">
               <Image
-                src={logo}
+                src="/logo.png"
                 alt="MEegin Tours logo"
                 className="object-cover"
                 fill

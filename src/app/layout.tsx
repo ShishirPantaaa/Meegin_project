@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import favicon from "./favicone.png";
+
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -20,27 +20,36 @@ export const metadata: Metadata = {
   title: "MEegin Tours & Travels | Nepal Tour Packages",
   description:
     "Premium Nepal tour packages, custom trips and destination experiences with trusted local expertise.",
-  metadataBase: new URL("https://meegintravels.com"),
+  metadataBase: new URL("https://www.meegintoursandtravel.com"),
   icons: {
-    icon: favicon.src,
-    shortcut: favicon.src,
-    apple: favicon.src,
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
   openGraph: {
     title: "MEegin Tours & Travels | Nepal Tour Packages",
     description:
       "Premium Nepal tour packages, custom trips and destination experiences with trusted local expertise.",
-    url: "https://meegintravels.com",
+    url: "https://www.meegintoursandtravel.com",
     siteName: "MEegin Tours & Travels",
     type: "website",
     images: [
       {
-        url: "/images/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "MEegin Tours & Travels Nepal landscape",
+        url: "/favicon.png",
+        width: 512,
+        height: 512,
+        alt: "MEegin Tours & Travels logo",
       },
     ],
+  },
+  twitter: {
+    card: "summary",
+    title: "MEegin Tours & Travels | Nepal Tour Packages",
+    description:
+      "Premium Nepal tour packages, custom trips and destination experiences with trusted local expertise.",
+    images: ["/favicon.png"],
   },
 };
 
